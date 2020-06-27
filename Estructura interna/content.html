@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/icon.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Estructura interna</title>
+    <link href="https://fonts.googleapis.com/css?family=Kalam:700&display=swap" rel="stylesheet">
+    <link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_quiz.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_mark.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_wordpuzzle.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_crossword.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_zoom.css" rel="stylesheet" type="text/css">
+    <link href="components/csscircle/circle.min.css" rel="stylesheet" type="text/css">
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+<!--jQuery components -->
+    <script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+
+    <script src="components/mediaelementjs/mediaelement-and-player.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/mediaelementjs/mediaelementplayer.css" type="text/css" />
+
+    <script src="components/maphilight/jquery.maphilight.min.js" type="text/javascript"></script>
+<!--End jQuery components -->
+
+    <script src="components/pit/jpit_api.js"></script>
+    <script src="components/pit/utilities/jpit_utilities.js"></script>
+    <script src="components/pit/activity/jpit_activity.js"></script>
+    <script src="components/pit/resources/jpit_resource.js"></script>
+    <script src="components/pit/activity/quiz/jpit_activity_quiz.js"></script>
+    <script src="components/pit/activity/mark/jpit_activity_mark.js"></script>
+    <script src="components/pit/activity/wordpuzzle/jpit_activity_wordpuzzle.js"></script>
+    <script src="components/pit/activity/droppable/jpit_activity_droppable.js"></script>
+    <script src="components/pit/activity/crossword/jpit_activity_crossword.js"></script>
+    <script src="components/pit/activity/cloze/jpit_activity_cloze.js"></script>
+    <script src="components/pit/activity/form/jpit_activity_form.js"></script>
+    <script src="components/pit/activity/sortable/jpit_activity_sortable.js"></script>
+    <script src="components/pit/activity/check/jpit_activity_check.js"></script>
+    <script src="components/pit/resources/movi/jpit_resource_movi.js"></script>
+    <script src="components/pit/resources/zoom/jpit_resource_zoom.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/lang.es.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/mobilelib.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+    <script src="components/scorm/scorm_api.js"> </script>
+
+    <style type='text/css'>
+
+        body {
+            background-color: rgba(242, 242, 242, 0.7);
+        }
+
+        body.loading {
+            text-align: center;
+        }
+
+        body.loading:after {
+            content: "";
+            background: url(img/loading.gif) no-repeat bottom center;
+            width: 130px;
+            height: 30px;
+            display: block;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+        body.loading #body {
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="loading" data-debug="true" data-display-mode="onlypages" data-approve-limit="70" data-activities-percentaje="60" data-mobile-mode="512">
+    <div id="body" class="not_print">
+        <div id="not_scorm_msg" style="display: none;"></div>
+        <header>
+            <div class="logos">
+                <img src="img/logo_confiar.png" alt="Cooperativa Confiar" title="Cooperativa Confiar"/>
+                <img src="img/logo_confiar_fundacion.png" alt="Fundación Confiar" title="Fundación Confiar"/>
+            </div>
+            <nav label="Principal" class="horizontal main" data-offset="true">
+                <menu>
+                    <menuitem label="Contenido">
+                        <menu>
+                            <menuitem label="1	Estructura interna de las organizaciones de economía social y solidaria" data-page="pag1-estructura_interna"></menuitem>
+                            <menuitem label="2	Tomar decisiones colectivas" data-page="pag2-decisiones"></menuitem>
+                            <menuitem label="3	Reflexión final" data-page="pag3-reflexion"></menuitem>
+                        </menu>
+                    </menuitem>
+                    <menuitem label="Actividad" data-page="pag-actividad"></menuitem>
+                    <menuitem label="Bibliografía" data-page="pag-bibliografia"></menuitem>
+                    <menuitem label="Créditos" data-page="pag-creditos"></menuitem>
+                </menu>
+            </nav>
+            <div class="stock_banner">
+                <img src="img/banner.png" alt="banner-cooperativa" title="Cooperativismo: Una economía para el Bienvivir"/>
+            </div>
+            <h2 class="page-title"></h2>
+        </header>
+        <main style="display: none;">
+            <section id="pag1-estructura_interna" ptitle="Estructura interna de las organizaciones de economía social y solidaria">
+                <div class="subpage0">
+                    <div class="img-general">                    
+                        <img src="content/img1.jpg" alt="El juramento del juego de la pelota" title="magen 1 El juramento del juego de la pelota"/>
+                    </div>
+                    <div class="about">
+                        <strong>Imagen 1.</strong> El juramento del juego de la pelota, autor: Jacques-Louis David. Recuperado
+                            el 12 de diciembre de 2019 de 
+                        <a href="http://contemporaneablogarte.blogspot.com/2006/10/el-juramento-del-juego-de-la-pelota.html" target="_blank">
+                            http://contemporaneablogarte.blogspot.com[...]</a>
+                    </div>
+                    <p>
+                    Como referimos en la Unidad anterior, los principios de la economía social y solidaria son los 
+                    que guían el accionar de las organizaciones, y para ello se requiere de una estructura interna que
+                    los concrete. Dicha estructura cuenta con tres escenarios fundamentales que permiten evidenciar cómo
+                    se toman las decisiones dentro de una organización y cuan democráticas son trabajando en pro del bienestar colectivo:
+                    </p>
+                    <div class="instruction">
+                    Da clic sobre cada imagen para más información.                    
+                    </div>
+                    <div class="img-informative" title="Imagen 2. Estructura interna que concreta el accionar de la Cooperativa Financiera, 2019">
+                        <img class="one button wf-content-controler general" data-content="#ventana_textos_flotante1" src="content/img2-1.png" alt="asamblea"/>
+                        <img class="two button wf-content-controler general" data-content="#ventana_textos_flotante2" src="content/img2-2.png" alt="consejo de administracion"/>
+                        <img class="three button wf-content-controler general" data-content="#ventana_textos_flotante3" src="content/img2-3.png" alt="organo de vigilancia"/>
+                        <img class="four button wf-content-controler general" data-content="#ventana_textos_flotante4" src="content/img2-4.png" alt="gerencia"/>                
+                        <div id="ventana_textos_flotante1" class="wf-content autox autoy" style="display: none;">
+                            <h3>Máximo organismo de dirección.</h3>
+                            <p>
+                                Elige el Consejo de Administración y el Órgano de Vigilancia, Fiscalización y Control.
+                            </p>
+                            <div class="close button">X</div>
+                        </div>
+                        <div id="ventana_textos_flotante2" class="wf-content autox autoy" style="display: none;">
+                            <h3>Organismo permanente de Dirección Estratégica.</h3>
+                            <p>
+                                Es el encargado de llevar a cabo las decisiones tomadas por la Asamblea y vela por la buena administración de los recursos de la organización
+                            </p>
+                            <div class="close button">X</div>
+                        </div>
+                        <div id="ventana_textos_flotante3" class="wf-content autox autoy" style="display: none;">
+                            <h3>Control social y fiscalización.</h3>
+                            <p>
+                                Se encarga del control interno de la organización, es decir, de que efectivamente todas las decisiones que se tomen estén acordes a la ley y
+                            a los estatutos. En el caso de Confiar, contamos con la Junta de Vigilancia, El Tribunal Electoral, el Comité de Apelaciones, Revisoría Fiscal y el Defensor del Consumidor Financiero.
+                            </p>
+                            <div class="close button">X</div>    
+                            </div>
+                        <div id="ventana_textos_flotante4" class="wf-content autox autoy" style="display: none;">
+                            <h3>Representante Legal.</h3>
+                            <p>
+                                Ejecutará las decisiones de la Asamblea General de Delegados y del Consejo de Administración. Será elegido por el Consejo de Administración.
+                            </p>
+                            <div class="close button">X</div> 
+                        </div>
+                    </div>
+                    <div class="about">
+                        <p>
+                            <strong>Imagen 2.</strong>  Estructura interna que concreta el accionar de la Cooperativa Financiera,2019
+                        </p>
+                    </div>
+                    <div class="box-text connection">
+                        Ahora hagamos un poco de énfasis en la Asamblea, para conocer más sobre su funcionamiento:
+                    </div>
+                    <div class="box-text link" label="Extendiendo el saber">
+                        <p><strong>Video</strong>: <a href="https://www.youtube.com/watch?v=FsT133xTj08&feature=youtu.be" target="_blank">La Asamblea</a></p>
+                        <p><strong>Duración</strong>: 2:42 (dos minutos y cuarenta y dos segundos)</p>
+                        <p><strong>Enunciado</strong>: La Asamblea es el órgano principal de las organizaciones de economía social y solidaria, allí están representados todos los asociados y es el escenario en el cual se toman las decisiones frente
+                            a los lineamientos estratégicos a seguir. Veamos este video.
+                        </p>
+                    </div>
+                    <div class="box-text note" label="Nota">
+                        <p>
+                            Para tener mayor claridad sobre las funciones de estas instancias, te recomendamos volver a revisar los estatutos de la Cooperativa, que abordamos en la primera Unidad del módulo 1.
+                        </p>
+                        <p>
+                            Aunque estas instancias están definidas, es importante mirar de manera crítica cada organización y hacer un análisis en cómo funcionan.
+                        </p>
+                    </div>
+                    <div class="box-text connection">
+                        La correcta gestión de los tres órganos debe garantizar que la toma de decisiones sea, efectivamente, democrática y propenda por el bien común, 
+                        como corresponde a las organizaciones de la economía social y solidaria. ¿Pero qué significa tomar decisiones colectivas? Es el tema que abordaremos a continuación.
+                    </div>
+                </div>
+            </section>
+            <section id="pag2-decisiones" ptitle="Tomar decisiones colectivas" >
+                <div class="subpage0">
+                    <div>
+                        <p>
+                            La toma de decisiones colectivas es compleja. En un escenario como la Asamblea, en el cual se pretende tomar decisiones
+                            por la vía de la democracia participativa, es necesario reconocer la importancia del debate argumentado y mantener la alerta
+                            sobre los posibles conflictos que puedan generarse cuando priman los intereses particulares por encima del colectivo.
+                        </p>
+                        <p>
+                            La democracia nos permite tomar decisiones colectivas de dos formas: por mayorías o por consenso. Cuando se toman las decisiones
+                            por mayorías, como se hace en muchas asambleas, suele evidenciarse una tensión, en algunas oportunidades el acuerdo no es compartido
+                            por todas las personas, sino por un número importante de estas, una realidad que no recoge los disensos, pero que reconoce la necesidad
+                            de avanzar con acuerdos y no detenerse largamente en discusiones que dilatan la toma de decisiones estratégicas.
+                        </p>
+                        <p>
+                            El consenso trata de abarcar, en mayor medida, los acuerdos colectivos, pues no se toma una decisión hasta que todas las personas estén de 
+                            acuerdo con esta. Así, el proceso de toma de decisiones puede ser más lento, pues las discusiones y los argumentos a favor y en contra tienen 
+                            la prioridad. El debate se extiende hasta que, realmente, se llegue a un acuerdo general
+                        </p>
+                    </div>
+                    <div class="img-general" >                  
+                        <img src="content/img3.jpg" alt="asamblea extraordinaria" title="Foto 1. Asamblea Extraordinaria, 2018"/>
+                    </div>
+                    <div class="about">
+                       <p><strong>Foto 1.</strong> Asamblea Extraordinaria, 2018</p> 
+                    </div>
+                    <div id="colums1" class="row">
+                        <div class="col-2">
+                            <h4>El Zapatismo toma las decisiones por consenso, este es uno de
+                                 los 7 principios de su apuesta organizativa.
+                            </h4>                          
+                            <button class="button general open-url" data-url="http://enlacezapatista.ezln.org.mx/">
+                                Puedes consultar más información sobre el Zapatismo haciendo clic aquí
+                            </button>
+                        </div>
+                        <div  class="col-2">
+                            <div class="img-general" id="img3_1">
+                                <img src="content/img3-1.jpg" alt="proyecto propaganda" title="Imagen 3. Proyecto Propaganda y Conciencia. “Los siete principios de los pueblos”."/>
+                            </div>    
+                            <div  class="about">
+                                <strong>Imagen 3.</strong> Proyecto Propaganda y Conciencia. “Los siete principios de los
+                                    pueblos”. Recuperado el 12 de enero de 2019 de 
+                                <a href="http://questiondigital.com/en-busca-del-pensamiento-critico-perdido/" target="_blank">http://questiondigital.com/[...]</a>
+                            </div>                        
+                        </div>
+                    </div>
+                    <div class="box-text link" label="Enlaces de ampliación">
+                        <ul>
+                            <li>
+                                <p><strong>Video</strong>: <a href="https://www.youtube.com/watch?v=b4_vBQDPWEE" target="_blank">Tierra y libertad</a></p>
+                                <p><strong>Enunciado</strong>: Te invitamos a ver este fragmento de la película: “Tierra y libertad”, donde se expone un caso en el cual la mayoría tiene una apuesta colectiva
+                                     y una persona busca sus intereses personales. Aquí se presenta un reto para las organizaciones de la economía social y solidaria: buscar
+                                     beneficios para el conjunto y reconocer las búsquedas individuales.</p>
+                                <p> <strong>Enunciado:</strong> Te invitamos a ver este fragmento de la película: “Tierra y libertad”, donde se expone un caso en el cual la mayoría
+                                    tiene una apuesta colectiva y una persona busca sus intereses personales. Aquí se presenta un reto para las organizaciones
+                                    de la economía social y solidaria: buscar beneficios para el conjunto y reconocer las búsquedas individuales.
+                                </p>
+                            </li>
+                            <li>
+                                <p><strong>Video</strong>: <a href="https://www.youtube.com/watch?v=e8mQA3TVVk0" target="_blank"></a> Un lugar en el mundo</p>
+                                <p><strong>Duración</strong>: 8:00 (ocho minutos)</p>
+                                <p><strong>Enunciado</strong>: Este fragmento de la película argentina: “Un lugar en el mundo” nos adentra en la reflexión sobre la complejidad de la toma de decisiones para el beneficio
+                                    colectivo y cómo dichas decisiones están acordes con los acuerdos previos e ideales. Muchas veces el mercado presiona (manejo de los precios, venta de las mercancías)
+                                    hasta el punto de cambiar los modos de pensar y el sentido de los proyectos. Por otro lado, este audiovisual nos permite reflexionar acerca de cómo ir tras los ideales
+                                    puede afectar al colectivo, abriéndonos nuevamente una tensión importante.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="box-text important" label="Reflexxión">
+                        <p>
+                            Las experiencias sobre las cuales giran ambas películas nos permiten identificar las tensiones propias de la toma colectiva
+                            de decisiones. La búsqueda del bien común nos exige tener en cuenta los principios, las presiones
+                            del mercado, las relaciones de poder, los deseos individuales y, por supuesto, los intereses
+                            colectivos.
+                        </p>
+                    </div>
+                    <h4>Para finalizar</h4>
+                    <p>
+                        Aquí queremos evidenciar los grises, las tensiones y los conflictos que nos permiten ser más críticos, analíticos y propositivos
+                        en nuestras organizaciones, para “amar lo imperfecto”…
+                    </p>
+                    <div class="poms1">
+                        <p>
+                            ¿Cómo amar lo imperfecto, si escuchamos a través de las cosas cómo nos llama lo perfecto?
+                        </p>
+                        <p>
+                            ¿Cómo alcanzar a seguir en la caída o el fracaso de las cosas la huella de lo que no cae ni fracasa?
+                        </p>
+                        <p>
+                            Quizá debamos aprender que lo imperfecto es otra forma de la perfección: la forma que la perfección asume para poder ser amada.
+                        </p>
+                        <p><strong>Roberto Juarroz</strong></p>
+                    </div>
+                </div>
+            </section>
+            <section id="pag3-reflexion" ptitle="Reflexión final">
+                <div class="subpage0">
+                    <p>
+                        Juana se adentró en el mundo de la gobernabilidad de la Cooperativa, dejó de ser una asociada puntual, para preguntarse por el rumbo de Confiar.
+                        Reflexionemos: ¿Qué le pasa a una organización con la llegada de nuevas personas a la Asamblea? ¿Qué pasa cuando llegan otros discursos? ¿Cómo se da esa
+                        transición entre los nuevos grupos de organismos sociales? ¿Qué aprendizajes tenemos allí?
+                    </p>
+                    <div class="img-general">
+                        <img src="content/img4.svg" alt="imagen 4- 2019" title="Imagen 4, 2019">
+                    </div>
+                    <div class="box-text connection">
+                        <p>
+                           Es momento de poner a prueba tus conocimientos y validar la comprensión de los contenidos desarrollados en esta Unidad. 
+                           Ten presente que estas actividades son para tu autoaprendizaje, por eso puedes realizarlas cuantas veces quieras hasta identificar 
+                           las respuestas correctas. Si no logras resolver el ejercicio, es muy probable que debas repasar los contenidos o incluso consultar otras fuentes. ¡Muchos éxitos!
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="pag-actividad" ptitle="Actividad">
+                <div class="subpage0">              
+                    <div class="box-text activity" label="¿Repasamos…?">
+                        <p>
+                            Arrastra cada uno de los órganos a la función que le corresponde:
+                        </p>
+                    </div>
+                    <div class="act_one">
+                        <div id="arrastra1" class="jpit-activities-droppable" data-verify-type="target" data-act-id="arrastrar3">
+                            <div class="board">
+                                <div class="board_img">  
+                                    <div class="fillable f1 droppable ui-droppable"  data-target-group="1">                                    
+                                    </div>  
+                                    <div class="fillable f2 droppable ui-droppable"  data-target-group="2">                                    
+                                    </div>    
+                                    <div class="fillable f3 droppable ui-droppable"  data-target-group="3">                                    
+                                    </div>  
+                                    <div class="fillable f4 droppable ui-droppable"  data-target-group="4">                                    
+                                    </div>                       
+                                </div> 
+                                <div class="fragment">
+                                    <div class="gp_3" data-group="3">Junta de Vigilancia</div>
+                                    <div class="gp_1" data-group="1">Asamblea</div>
+                                    <div class="gp_4" data-group="4">Revisoría Fiscal</div>                                
+                                    <div class="gp_2" data-group="2">Consejo de Administración</div>                                
+                                </div> 
+                                <div class="box_end" style="display: none;"></div>
+                            </div>
+                        </div>
+                    </div>    
+                    <hr class="clear"/>
+                </div>
+            </section>
+            <section id="pag-bibliografia" ptitle="Bibliografía">
+                <div class="subpage0">
+                    <div>
+                        <ul class="data_list">
+                            <li>Confiar, Cooperativa Financiera. Estatutos septiembre de 2018</li>
+                            <li>Congreso de Colombia. Ley79 de 1988</li>
+                            <li>Chaves y Soler. El gobierno de las Cooperativas de crédito en España. CIRIEC, Centro
+                                 Internacional de Investigación e Información sobre la Economía Pública, Social y Cooperativa Valencia 2004 pág. 27
+                            </li>
+                            <li>Laidlaw, Alexander Fraser. Las Cooperativas en el año 2000. 27° Congress of the International Co-operative Alliance, Moscow,
+                                 October 1980. Nº 3, págs. 107-163.
+                            </li>
+                            <li>
+                                Serna Gómez, H. & Rubio-Rodríguez, G.A. (2016). La gobernabilidad en el sector cooperativo: una reflexión acerca de su verdadera implementación.
+                                Revista Virtual Universidad Católica del Norte, 48, 239-256. Recuperado de <a href="https://revistavirtual.ucn.edu.co/index.php/RevistaUCN/article/view/771/1297" target="_blank">
+                                http://revistavirtual.ucn.edu.co/[...]</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="pag-creditos" ptitle="Créditos">
+                <div>
+                    <div class="subpage0">
+                        <h3>INVESTIGACIÓN Y DESARROLLO DE CONTENIDOS</h3>
+                        <h4>Plataforma Solidaria Confiar</h4>
+                        <cite>Alejandro López Carmona</cite>
+                        <p><strong>Director Fundación Confiar</strong></p>
+                        <cite>Jose García</cite>
+                        <p><strong>Director Escuela Confiar</strong></p>
+                        <cite>Jenny Giraldo García</cite>
+                        <p><strong>Directora de Formación Confiar</strong></p>
+                        <cite>Cristina Amariles Mejía</cite> 
+                        <p><strong>Asociada Confiar</strong></p>
+                        <cite>Oriana C. Zapata Ochoa</cite>
+                        <p><strong>Gestora Educativa</strong></p>
+                    </div>
+                    <div>
+                        <h3>ASESORÍA PEDAGÓJICA Y DISEÑO INSTRUCCIONAL</h3>
+                        <cite>Carolina Llanos Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>CORRECCIÓN DE ESTILOS</h3>
+                        <cite>María Catherine Ortega Cruz</cite>
+                    </div>
+                    <div>
+                        <h3>DISEÑO GRÁFICO</h3>
+                        <cite>Juliana Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>INTEGRACIÓN DE CONTENIDOS</h3>
+                        <cite>Sergio Andrés Arboleda Zuluaga</cite>
+                    </div>
+                    <div>
+                        <h3>REVISIÓN DE CALIDAD</h3>
+                        <cite>Ana Yarenis Arango Muñoz</cite>
+                    </div>
+                    <div>
+                        <h3>GESTIÓN TÉCNICA Y ADMINSTRATIVA</h3>
+                        <cite>David Herney Bernal García</cite>
+                    </div>
+                    <div>
+                        <h3>Producción</h3>
+                        <p class="logos">
+                            <a href="https://bambuco.co/" target="_blank">
+                            <img src="img/logo_bambuco.png" alt="bambuco"/></a>
+                            <img src="img/logo_confiar.png" alt="cooperativa confiar" title="Cooperativa Confia"/>
+                            <img src="img/logo_confiar_fundacion.png" alt="fundacion confiar" title="Fundación Confiar"/>
+                        </p>
+                    </div>
+                    <div>
+                        <p> <strong>Un producto educativo y sin ánimo de lucro de la Escuela Confiar</strong></p>
+                        <p><a href="https://www.confiar.coop/" target="_blank">www.confiar.coop</a></p>
+                        <p><a href="https://escuela.confiar.coop/" target="_blank">escuela.confiar.coop</a></p>
+                    </div>
+                    <div class="edition">
+                        <p>1ª edición: febrero de 2019</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="not_print">
+            <div class="measuring-progress"></div>
+            <nav label="Características globales" class="globals">
+                <menu>
+                    <menuitem data-global-id="results"><i title="Progreso" class="ion-clipboard tooltip" data-position-at="top"></i></menuitem>
+                    <menuitem data-global-id="return">
+                        <i title="Maximizar" class="ion-arrow-expand tooltip maximize" data-position-at="top"></i>
+                        <i title="Minimizar" class="ion-arrow-shrink tooltip minimize" data-position-at="top"></i>
+                    </menuitem>
+                    <menuitem data-global-id="close_all"><i title="Regresar" class="ion-reply tooltip" data-position-at="top"></i></menuitem>
+                </menu>
+            </nav>
+
+            <div id="subpages_menu">
+                <div class="button" previous-page></div>
+                <ul class="button" subpages-menu></ul>
+                <div class="button" next-page></div>
+            </div>
+
+            <div id="page_number"></div>
+        </footer>
+    </div>
+
+    <div id="results_page" style="display:none;">
+        <h2>Resumen de su avance en la lectura del documento</h2>
+        <h3>Páginas visitadas</h3>
+        <p>En verde, aquellas páginas que ya ha visitado.</p>
+        <div id="results_page_visited" class="container"></div>
+        <br class="clear" />
+        <div id="results_page_activities"></div>
+    </div>
+
+    <div id="printent_content" style="display:none;">
+        <div class="content"></div>
+        <div class="button_container">
+            <button class="general button" onclick="window.print();">Imprimir</button>
+            <button id="printent_back" class="general button" >Volver</button>
+        </div>
+    </div>
+
+</body>
+</html>

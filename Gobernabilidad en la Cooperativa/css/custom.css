@@ -1,0 +1,114 @@
+/* Imagen 5 */
+#img5 img {
+    filter: grayscale(100%);
+    width: 17%;
+}
+
+#img5 img:hover {
+    filter: grayscale(0);
+    transition: background-color 1000ms linear;
+}
+
+#img5 img.current {
+    filter: grayscale(0);
+    transition: background-color 1000ms linear;
+}
+
+/*Caja de texto link*/
+.box_body a {
+    color: #fff;
+}
+
+/*poblacion adulta img6*/
+#img6 {
+    background: url(../content/img3_bg.png) no-repeat center;
+    height: 423px;
+    position: relative;
+    background-size: cover;
+    overflow: auto;
+    width: 720px;
+    margin: auto;
+}
+
+#img6 div {
+    background: #FFFFFF;
+    box-shadow: 2.53px 2.53px 1.81px #000000;
+    font-family: 'Kalam', cursive;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: #000000;
+}
+
+#img6 p {
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#img6 .box1 {
+    max-width: 461px;
+    position: relative;
+    left: 40px;
+    top: 32px;
+}
+
+#img6 .box2 {
+    position: relative;
+    width: 505px;
+    left: 87px;
+    top: 40px;
+}
+
+#img6 .box3 {
+    width: 600px;
+    position: relative;
+    top: 50px;
+    left: 90px;
+}
+
+#img6 .arrow1 {
+    position: absolute;
+    left: 490px;
+    top: 70px;
+}
+
+#img6 .arrow2 {
+    position: absolute;
+    left: 580px;
+    top: 160px;
+}
+
+#img6 img {
+    animation-name: floating;
+    -webkit-animation-name: floating;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    width: 60px;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(20%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes floating {
+    0% {
+        -webkit-transform: translateY(0%);
+    }
+    50% {
+        -webkit-transform: translateY(20%);
+    }
+    100% {
+        -webkit-transform: translateY(0%);
+    }
+}

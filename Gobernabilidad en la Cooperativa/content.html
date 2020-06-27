@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Gobernabilidad en la cooperativa</title>
+    <link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_quiz.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_mark.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_wordpuzzle.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_crossword.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_zoom.css" rel="stylesheet" type="text/css">
+    <link href="components/csscircle/circle.min.css" rel="stylesheet" type="text/css">
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+<!--jQuery components -->
+    <script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+
+    <script src="components/mediaelementjs/mediaelement-and-player.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/mediaelementjs/mediaelementplayer.css" type="text/css" />
+
+    <script src="components/maphilight/jquery.maphilight.min.js" type="text/javascript"></script>
+<!--End jQuery components -->
+
+    <script src="components/pit/jpit_api.js"></script>
+    <script src="components/pit/utilities/jpit_utilities.js"></script>
+    <script src="components/pit/activity/jpit_activity.js"></script>
+    <script src="components/pit/resources/jpit_resource.js"></script>
+    <script src="components/pit/activity/quiz/jpit_activity_quiz.js"></script>
+    <script src="components/pit/activity/mark/jpit_activity_mark.js"></script>
+    <script src="components/pit/activity/wordpuzzle/jpit_activity_wordpuzzle.js"></script>
+    <script src="components/pit/activity/droppable/jpit_activity_droppable.js"></script>
+    <script src="components/pit/activity/crossword/jpit_activity_crossword.js"></script>
+    <script src="components/pit/activity/cloze/jpit_activity_cloze.js"></script>
+    <script src="components/pit/activity/form/jpit_activity_form.js"></script>
+    <script src="components/pit/activity/sortable/jpit_activity_sortable.js"></script>
+    <script src="components/pit/activity/check/jpit_activity_check.js"></script>
+    <script src="components/pit/resources/movi/jpit_resource_movi.js"></script>
+    <script src="components/pit/resources/zoom/jpit_resource_zoom.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/lang.es.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/mobilelib.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+    <script src="components/scorm/scorm_api.js"> </script>
+
+    <style type='text/css'>
+
+        body {
+            background-color: rgba(242, 242, 242, 0.7);
+        }
+
+        body.loading {
+            text-align: center;
+        }
+
+        body.loading:after {
+            content: "";
+            background: url(img/loading.gif) no-repeat bottom center;
+            width: 130px;
+            height: 30px;
+            display: block;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+        body.loading #body {
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="loading" data-debug="true" data-display-mode="onlypages" data-approve-limit="70" data-activities-percentaje="60" data-mobile-mode="512">
+    <div id="body" class="not_print">
+        <div id="not_scorm_msg" style="display: none;"></div>
+
+        <header>
+            <h1>Ejemplos de controles a soportar en el documento</h1>
+            <h2>Plantilla de producción de contenidos interactivos</h2>
+            <nav label="Principal" class="horizontal main" data-offset="true">
+                <menu>                    
+                    <menuitem label="CONTENIDOS">
+                        <menu>
+                            <menuitem label="1. Definiciones de gobernabilidad" data-page="pag-defingob"></menuitem>
+                            <menuitem label="2. Componentes de la gobernabilidad" data-page="pag-compgob"></menuitem>
+                            <menuitem label="3. Grados de gobernabilidad" data-page="pag-gradogob"></menuitem>
+                            <menuitem label="4. La gobernabilidad en la Cooperativa" data-page="pag-gobcoop"></menuitem>
+                            <menuitem label="5. Estrategias sobre la gobernabilidad de Confiars" data-page="pag-estratgob"></menuitem>
+                        </menu>
+                    </menuitem>
+                    <menuitem label="ACTIVIDADES" data-page="pag-activ"></menuitem>
+                    <menuitem label="BIBLIOGRAFÍA" data-page="pag-bibliografia"></menuitem>
+                    <menuitem label="CRÉDITOS" data-page="pag-creditos"></menuitem>
+                </menu>
+            </nav>
+            <h2 class="page-title"></h2>
+        </header>
+
+        <main style="display: none;">
+            <!-- 1. Definiciones de gobernabilidad -->
+            <section id="pag-defingob" ptitle="Definiciones de gobernabilidad">
+                <div class="box-text important" label="Pregunta de reflexión">
+                    <p>
+                        Para empezar, hazte la siguiente pregunta: ¿la gobernabilidad se podrá concebir como una propiedad
+                        específica de los gobiernos y los actores sociopolíticos relevantes?
+                    </p>
+                  </div>
+                  <p>
+                    Ahora lee con atención las siguientes opiniones de expertos en gobernabilidad:
+                  </p>
+                  <blockquote>
+                    En la gobernabilidad se busca una restructuración corporativa de la sociedad, que garantice la capacidad de los actores 
+                    institucionales para concretizar un pacto social incluyente, participativo y que supere el corporativismo tradicional
+                    <label>Michael Coppedge, 1994. Profesor de ciencias políticas en la Universidad de Notre Dame.
+                    </label>
+                </blockquote>
+                <blockquote>
+                    La gobernabilidad local y la descentralización, que en ocasiones se utilizan indistintamente, 
+                    son conceptos relacionados entre sí pero diferentes. La descentralización es primordialmente un proceso 
+                    nacional legislativo, institucional y fiscal, en tanto que la gobernabilidad depende de un elemento más 
+                    democrático que se deriva de las relaciones ciudadanas directas con el gobierno
+                    <label>Raziel Husata Garay, 2012. Profesor en la Facultad de Ciencias Políticas y Sociales de la Universidad Nacional Autónoma de México.</label>
+                </blockquote>
+                <blockquote>
+                    Los procesos de gobernabilidad local muestran una importante profundización en las prácticas políticas democráticas, pues ponen al ciudadano en un
+                    contacto más directo con los tomadores de decisiones y amplían el espacio para la participación social, la transparencia y la rendición de cuentas
+                    <label>Raziel Husata Garay, 2012. Profesor en la Facultad de Ciencias Políticas y Sociales de la Universidad Nacional Autónoma de México.</label>
+                </blockquote>
+                <div class="box-text important" label="¡Reflexiona en familia!">
+                    <p>
+                        ¿Qué cambiaría si en la familia existiera una asamblea y todos sus miembros participaran de las decisiones colectivas?
+                    </p>
+                </div>
+                <div class="box-text connection">
+                    <p>
+                        En las sociedades contemporáneas la gobernabilidad es un criterio político fundamental, tanto para los actores internos como para los externos o el ámbito internacional.
+                        Hay que tener en cuenta que la gobernabilidad es un concepto complejo, esto implica que para precisar las realidades en cada caso, es necesario tener presente de que
+                        está compuesta, aspecto que posibilita agenciar este criterio en las sociedades o en las organizaciones.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. Componentes de la gobernabilidad -->
+            <section id="pag-compgob" ptitle="Componentes de la gobernabilidad">
+                <p>
+                    El Estado, siendo una forma de organización que construyen los ciudadanos, se divide en varios poderes,
+                    para el caso colombiano en tres: Legislativo, Ejecutivo y Judicial. La construcción del Estado tiene como
+                    finalidad salvaguardar los derechos y deberes ciudadanos, además de la satisfacción de necesidades; por
+                    ello se le dota de una serie de capacidades para dar respuesta a esas demandas. Incluso,
+                    si no hay respuestas, se producen una serie de reacciones de los diferentes grupos de interés, 
+                    teniendo en cuenta también la no reacción, es decir, la pasiva. Esta dinámica muestra las tradiciones 
+                    que reflejan de qué está compuesta la gobernabilidad, las cuales se presentan a continuación.
+                </p>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="instruction">
+                          <span class="notmobile">Pasa el <em>mouse</em> por los ítems para más información.</span>  
+                          <span><em>Toca</em> los ítems para más información que se mostrará bajo la imagen</span>
+                        </div>
+                       <div class="mouse-over-one" id="img1">
+                        <img class="button current" src="content/img1_btn1.svg" title="La tradición de la " razón="" de="" estado""="" data-ref="#a1"/>
+                        <img class="button" src="content/img1_btn2.svg" title="La tradición del " buen="" gobierno""="" data-ref="#a2"/>
+                        <img class="button" src="content/img1_btn3.svg" title="La tradición " política""="" data-ref="#a3"/>
+                        <div class="about">
+                            <strong>Imagen 1.</strong> Componentes de gobernabilidad. Tomado de: Antonio Camou, (2013)
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-2 custom-border">
+                        <div id="a1">
+                            <h3>La tradición de la "razón de Estado"</h3>
+                            <div class="box_media">
+                                <img src="content/img1_illu1.png" title="Imagen 2 Gobernabilidad y eficacia (2019)" alt="Imagen 2">
+                            </div>
+                            <div class="about">
+                                <strong>Imagen 2</strong> Gobernabilidad y eficacia (2019)
+                            </div>
+                            <p>
+                                Se centra en la dimensión de la eficacia/eficiencia en el ejercicio del poder político y, por ende, de la gestión gubernamental.
+                                Los distintos actores sociales, políticos y económicos poseen una "porción" de poder que ejercen estableciendo vetos cruzados sobre las decisiones
+                            </p>
+                        </div>
+                        <div id="a2" style="display: none;">
+                            <h3>La tradición del "buen gobierno"</h3>
+                            <div class="box_media">
+                                <img src="content/img1_illu2.png" title="Imagen 3 Gobernabilidad y legitimidad (2019)" alt="Imagen 3">
+                            </div>
+                            <div class="about">
+                                <strong>Imagen 3</strong> Gobernabilidad y legitimidad (2019)
+                            </div>
+                            <p>
+                                Hace referencia a la tradición de la justicia y la legitimidad de un ordenamiento político-social, la tradición del respeto a los derechos humanos y de la obligación gubernamental de proveer el bienestar general. Se enmarca en el principio: "el gobierno es para los individuos y no los individuos para el gobierno", con el fin de "conseguir la paz, la seguridad y el bien de la población",
+                                descrito por el filósofo británico John Locke.
+                            </p>
+                        </div>
+                        <div id="a3" style="display: none;">
+                            <h3>La tradición "política"</h3>
+                            <div class="box_media">
+                                <img src="content/img1_illu3.png" title="Imagen 4 Gobernabilidad y estabilidad (2019)" alt="Imagen 4">
+                            </div>
+                            <div class="about">
+                                <strong>Imagen 4</strong> Gobernabilidad y estabilidad (2019)
+                            </div>
+                            <p>
+                                Un sistema será más gobernable en la medida en que posea mayor capacidad de adaptación y mayor flexibilidad institucional,
+                                respecto a los cambios de su entorno nacional e internacional, económico, social y político.
+                            </p>
+                        </div>
+                    </div>                                       
+                </div>
+                <div class="box_media">
+                    <img src="content/img1_polaroid_camou.png" title="Imagen 1.1 Componentes de gobernabilidad (2019)"/>
+                    <blockquote>
+                        Gobernabilidad es un estado de equilibrio dinámico entre demandas sociales y capacidad de respuesta gubernamental.
+                        <label>Componentes de gobernabilidad. Tomado de: Antonio Camou, (2013)</label>
+                    </blockquote>
+                </div>
+                <div class="box-text connection">
+                    Hasta el momento hemos precisado cómo está integrada la gobernabilidad, asunto que nos abre las puertas para la comprensión de los diferentes grados que esta puede tener, tema que desarrollaremos a continuación.
+                </div>
+            </section>
+
+            <!-- 3. Grados de gobernabilidad -->
+            <section id="pag-gradogob" ptitle="Grados de gobernabilidad">
+                <p>
+                    Para hablar de grados de gobernabilidad partimos de la idea de que todas las sociedades son, en alguna medida, gobernables. Pero, además, que esa característica siempre conlleva diferentes grados de problemas; por ello, se manifiestan distintos
+                    matices de la gobernabilidad, que explicamos en el siguiente gráfico.
+                </p>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="instruction">
+                            <span class="notmobile">Pasa el <em>mouse</em> por</span>
+                            <span class="onlymobile"><em>Toca</em></span>
+                            los ítems para más información
+                        </div>
+                        <div id="img5" class="mouse-over-one">
+                            <img class="button" src="content/img2_btn1.svg" title="Ingobernabilidad" data-ref="#b5">
+                            <img class="button" src="content/img2_btn2.svg" title="Crisis de gobernabilidad" data-ref="#b4">
+                            <img class="button" src="content/img2_btn3.svg" title="Déficit de gobernabilidad" data-ref="#b3">
+                            <img class="button" src="content/img2_btn4.svg" title="Gobernabilidad " normal""="" data-ref="#b2">
+                            <img class="button" src="content/img2_btn5.svg" title="Gobernabilidad " ideal""="" data-ref="#b1">
+                        </div>
+                        <div class="about">
+                            <strong>Imagen 5.</strong> Grados de gobernabilidad, (2018)
+                        </div>                        
+                    </div>
+                    <div class="col-2 custom-border">
+                        <div id="b1" style="">
+                            <h3>Gobernabilidad "ideal"</h3>
+                            <p>Corresponde al equilibrio puntual entre demandas sociales y respuestas gubernamentales.
+                                Una sociedad sin conflictos.</p>
+                        </div>
+                        <div id="b2" style="display: none;">
+                            <h3>Gobernabilidad "normal"</h3>
+                            <p>Hace referencia a las discrepancias (o diferencias) entre demandas y respuestas, las cuales
+                                se encuentran en un equilibrio dinámico.</p>
+                        </div>
+                        <div id="b3" style="display: none;">
+                            <h3>Déficit de gobernabilidad</h3>
+                            <p>Se presenta cuando hay un desequilibrio entre el nivel de las demandas sociales y la capacidad
+                                de respuesta gubernamental, generando con ello "anomalías" en diversas esferas de la
+                                sociedad (economía, política y seguridad ciudadana, entre otras).</p>
+                        </div>
+                        <div id="b4" style="display: none;">
+                            <h3>Crisis de gobernabilidad</h3>
+                            <p>Se refiere a la "proliferación de anomalías", es decir, una conjunción de desequilibrios
+                                inesperados y/o intolerables entre demandas sociales y respuestas gubernamentales.</p>
+                        </div>
+                        <div id="b5" style="display: none;">
+                            <h3>Ingobernabilidad</h3>
+                            <p>Corresponde al "límite" que designa la virtual disolución de la relación del gobierno
+                                que une, por ambos lados, a los miembros de una comunidad política.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-text link" label="Estructura el concepto">
+                    <div class="title">
+                        <div class="text">
+                            Estructura el concepto
+                        </div>
+                    </div>
+                    <div class="box_body">
+                        <p>
+                            <strong>Libro:</strong> <a href="https://portalanterior.ine.mx/archivos3/portal/historico/recursos/IFE-v2/DECEYEC/DECEYEC-CuadernosDivulgacion/2015/cuad_6.pdf" target="_blank">Gobierno y democracia - Antonio Camou</a></p><p><strong>Duración:</strong> 64 páginas</p><p><strong>Enunciado:</strong> La auténtica soberanía popular implica múltiples formas de participación
+                            ciudadana y una forma de lograrlo es la democracia. Ahora bien, ¿la democracia tiene un vínculo
+                            con la gobernabilidad? Para dar una respuesta precisa a esta pregunta, te invitamos a leer con
+                            atención este texto.
+                        </p>
+                    </div>
+                </div>
+                <div class="box-text important" label="Para reflexionar…">
+                    <div class="title">
+                        <div class="text">
+                            Para reflexionar…
+                        </div>
+                    </div>
+                    <div class="box_body">
+                        <p>
+                            Dice Norberto Bobbio: "Podemos afirmar que la democracia hace referencia a un conjunto de reglas fundamentales que establecen
+                            quién está autorizado a tomar decisiones, bajo qué procedimientos y en qué condiciones".
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    Una forma de gobierno será considerada democrática solo si se cumple los siguientes aspectos:
+                </p>
+                <div class="box_media">
+                    <div id="img6">
+                        <div class="box1">
+                            <p>
+                                La población adulta tiene el derecho y la libertad de involucrarse en los procesos de toma de decisiones.
+                            </p>
+                        </div>
+                        <div class="box2">
+                            <p>
+                                El procedimiento de toma de decisiones se rige por el "principio de mayoría".
+                            </p>
+                        </div>
+                        <div class="box3">
+                            <p>
+                                Están garantizadas un conjunto de libertades básicas (de opinión, de información, de asociación y de reunión, entre otras)
+                                que permiten a los sujetos involucrados presentar y/o elegir opciones políticas definidas,
+                                sin que pesen sobre ellos mecanismos de coacción.
+                            </p>
+                        </div>
+                        <img class="arrow1" src="content/img3_arrow.svg">
+                        <img class="arrow2" src="content/img3_arrow.svg">
+                    </div>
+                </div>
+                <div class="about">
+                    <strong>Imagen 6.</strong> Consideraciones para ser democracia. Tomado de: Norberto Bobbio, El futuro
+                    de la democracia (1984)
+                </div>
+            </section>
+
+            <!-- Bibliografía --> 
+            <section id="pag-bibliografia" ptitle="Bibliografía">
+                <ul class="data_list">
+                    <li>
+                        Altman. D. "Crisis de gobernabilidad democrática: orígenes y mapa de lectura".
+                        Instituciones y Desarrollo. Vol. 8 y 9, Edición Especial. Mayo 2001
+                    </li>
+                    <li>
+                        Camou Antonio. "Gobernabilidad y Democracia". Instituto Federal Electoral. México. 2013
+                    </li>
+                    <li>
+                        Coppedge, M. "El concepto de gobernabilidad. Modelos positivos y negativos".
+                        En Ecuador: un problema de gobernabilidad, CORDES-PNUD, Quito. 1996.
+                    </li>
+                    <li>
+                        Husata Garay, Raziel. "Reflexiones sobre la gobernabilidad y su importancia para el desarrollo local".
+                        Revista Encrucijada, Centro de Estudios de Administración Pública. México. 2012
+                    </li>
+                    <li>
+                        Matas, J. et. al. "Coaliones Políticas y Gobernabilidad". Instituto de Ciencias Políticas y Sociales. (ICPS). Barcelona, 2000.
+                    </li>
+                    <li>
+                        Mayorga, Fernando y Córdova, Eduardo. "Gobernabilidad y gobernanza en AmericaAmérica Latina". Instituto Universitario de Estudios del Desarrollo, Ginebra. 2007
+                    </li>
+                    <li>
+                        Pérez Liñán, A. "Crisis presidenciales: gobernabilidad y estabilidad democrática para América Latina". Instituciones y Desarrollodesarrollo.
+                        8 y 9. Edición Especial. Mayo. 2001.
+                    </li>
+                    <li>
+                        Prats, Joan. "El Concepto y el Análisis de la Gobernabilidad". 2002 Recuperado en noviembre de 2018 de:
+                        <a href="http://www.insumisos.com/httpdocs/articulos/El%20concepto%20y%20el%20an%E1lisis%20de%20la%20gobernabilidad.pdf" target="_blank">http://www.insumisos.com/httpdocs[...]</a> 
+                    </li>
+                    <li>
+                        Prats, Joan. "Gobernabilidad democrática para el desarrollo humano: marco conceptual y analítico". Instituciones y Desarrollodesarrollo. Vol.10, 2001.
+                    </li>                    
+                </ul>
+            </section>
+
+            <!-- Créditos -->
+            <section id="pag-creditos" ptitle="Créditos">
+                <div>
+                    <h3>INVESTIGACIÓN Y DESARROLLO DE CONTENIDOS</h3>
+                    <h4>Plataforma Solidaria Confiar</h4>
+                    <p>
+                        <cite>Alejandro López Carmona</cite><br/>
+                        <strong>Director Fundación Confiar</strong>
+                    </p>
+                    <p>
+                        <cite>Jose García</cite><br/>
+                        <strong>Director Escuela Confiar</strong>
+                    </p>
+                    <p>
+                        <cite>Cristina Amariles Mejía</cite><br/>
+                        <strong>Asociada Confiar</strong>
+                    </p>
+                    <p>
+                        <cite>Oriana C. Zapata Ochoa</cite>
+                        <strong>Gestora Educativa</strong>
+                    </p>
+                    <div>
+                        <h3>ASESORÍA PEDAGÓGICA Y DISEÑO INSTRUCCIONAL</h3>
+                        <cite>Carolina Llanos Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>CORRECCIÓN DE ESTILOS</h3>
+                        <cite>María Catherine Ortega Cruz</cite>
+                    </div>
+                    <div>
+                        <h3>DISEÑO GRÁFICO</h3>
+                        <cite>Juliana Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>INTEGRACIÓN DE CONTENIDOS</h3>
+                        <cite>Sergio Andrés Arboleda Zuluaga</cite>
+                    </div>
+                    <div>
+                        <h3>REVISIÓN DE CALIDAD</h3>
+                        <cite>Ana Yarenis Arango Muñoz</cite>
+                    </div>
+                    <div>
+                        <h3>GESTIÓN TÉCNICA Y ADMINISTRATIVA</h3>
+                        <cite>David Herney Bernal García</cite>
+                    </div>
+                    <div>
+                        <h3>Producción</h3>                    
+                        <p class="logs">
+                            <a href="http://bambuco.co/" target="_blank">
+                                <img src="img/logo_bambuco_creditos.png" alt="BambuColectivo"></a>
+                            <a href="http://escuela.confiar.coop" target="_blank">
+                                <img src="img/logos_confiar_creditos.png" alt="EscuelaConfiar"></a>
+                        </p>
+                    </div>
+                    <div>
+                        <strong>Un producto educativo y sin ánimo de lucro de la Escuela Confiar</strong>
+                        <p>
+                            <a href="http://confiar.coop" target="_blank">www.confiar.coop</a>
+                        </p>
+                        <p>
+                            <a href="http://escuela.confiar.coop" target="_blank">escuela.confiar.coop</a>
+                        </p>
+                    </div>
+                    <div class="editions">
+                        1ª edición: enero de 2019 <br/>
+                        2ª edición: febrero de 2019
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="not_print">
+            <div class="measuring-progress"></div>
+
+            <nav label="Características globales" class="globals">
+                <menu>
+                    <menuitem data-global-id="results"><i title="Progreso" class="ion-clipboard tooltip" data-position-at="top"></i></menuitem>
+                    <menuitem data-global-id="return">
+                        <i title="Maximizar" class="ion-arrow-expand tooltip maximize" data-position-at="top"></i>
+                        <i title="Minimizar" class="ion-arrow-shrink tooltip minimize" data-position-at="top"></i>
+                    </menuitem>
+                    <menuitem data-global-id="close_all"><i title="Regresar" class="ion-reply tooltip" data-position-at="top"></i></menuitem>
+                </menu>
+            </nav>
+
+            <div id="subpages_menu">
+                <div class="button" previous-page></div>
+                <ul class="button" subpages-menu></ul>
+                <div class="button" next-page></div>
+            </div>
+
+            <div id="page_number"></div>
+        </footer>
+
+    </div>
+
+    <div id="results_page" style="display:none;">
+        <h2>Resumen de su avance en la lectura del documento</h2>
+        <h3>Páginas visitadas</h3>
+        <p>En verde, aquellas páginas que ya ha visitado.</p>
+        <div id="results_page_visited" class="container"></div>
+        <br class="clear" />
+        <h3>Actividades de aprendizaje</h3>
+        <div id="results_page_activities"></div>
+    </div>
+
+    <div id="printent_content" style="display:none;">
+        <div class="content"></div>
+        <div class="button_container">
+            <button class="general button" onclick="window.print();">Imprimir</button>
+            <button id="printent_back" class="general button" >Volver</button>
+        </div>
+    </div>
+
+</body>
+</html>

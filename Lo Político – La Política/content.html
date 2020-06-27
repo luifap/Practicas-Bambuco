@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Construcciones históricas de lo político</title>
+    <link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_quiz.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_mark.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_wordpuzzle.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_crossword.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_zoom.css" rel="stylesheet" type="text/css">
+    <link href="components/csscircle/circle.min.css" rel="stylesheet" type="text/css">
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+<!--jQuery components -->
+    <script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+
+    <script src="components/mediaelementjs/mediaelement-and-player.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/mediaelementjs/mediaelementplayer.css" type="text/css" />
+
+    <script src="components/maphilight/jquery.maphilight.min.js" type="text/javascript"></script>
+<!--End jQuery components -->
+
+    <script src="components/pit/jpit_api.js"></script>
+    <script src="components/pit/utilities/jpit_utilities.js"></script>
+    <script src="components/pit/activity/jpit_activity.js"></script>
+    <script src="components/pit/resources/jpit_resource.js"></script>
+    <script src="components/pit/activity/quiz/jpit_activity_quiz.js"></script>
+    <script src="components/pit/activity/mark/jpit_activity_mark.js"></script>
+    <script src="components/pit/activity/wordpuzzle/jpit_activity_wordpuzzle.js"></script>
+    <script src="components/pit/activity/droppable/jpit_activity_droppable.js"></script>
+    <script src="components/pit/activity/crossword/jpit_activity_crossword.js"></script>
+    <script src="components/pit/activity/cloze/jpit_activity_cloze.js"></script>
+    <script src="components/pit/activity/form/jpit_activity_form.js"></script>
+    <script src="components/pit/activity/sortable/jpit_activity_sortable.js"></script>
+    <script src="components/pit/activity/check/jpit_activity_check.js"></script>
+    <script src="components/pit/resources/movi/jpit_resource_movi.js"></script>
+    <script src="components/pit/resources/zoom/jpit_resource_zoom.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/lang.es.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/mobilelib.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+    <script src="components/scorm/scorm_api.js"> </script>
+
+    <style type='text/css'>
+
+        body {
+            background-color: rgba(242, 242, 242, 0.7);
+        }
+
+        body.loading {
+            text-align: center;
+        }
+
+        body.loading:after {
+            content: "";
+            background: url(img/loading.gif) no-repeat bottom center;
+            width: 130px;
+            height: 30px;
+            display: block;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+        body.loading #body {
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="loading" data-debug="true" data-display-mode="onlypages" data-approve-limit="70" data-activities-percentaje="60" data-mobile-mode="512">
+    <div id="body" class="not_print">
+        <div id="not_scorm_msg" style="display: none;"></div>
+
+        <nav label="Características globales" class="globals">
+            <menu>
+                <menuitem data-global-id="results"><div title="Progreso" class="tooltip" data-position-at="bottom"></div></menuitem>
+                <menuitem data-global-id="return">
+                    <div title="Maximizar" class="tooltip maximize" data-position-at="bottom"></div>
+                    <div title="Minimizar" class="tooltip minimize" data-position-at="bottom"></div>
+                </menuitem>
+                <menuitem data-global-id="close_all"><div title="Regresar" class="tooltip" data-position-at="bottom"></div></menuitem>
+            </menu>
+        </nav>
+
+        <main style="display: none;">
+
+            <header>
+            <div id="logos">
+                <img src="img/logo_escuela.png" alt="logo escuela de confiar" title="Escuela Confiar"/>
+                <img src="img/logo_confiar.png" alt="Cooperativa Confiar" title="Cooperativa Confiar" />
+            </div>
+            <nav label="Principal" class="horizontal main" data-offset="true">
+                <menu>
+                    <menuitem label="1. Lo político y la política" data-page="pag-politico"></menuitem>
+                    <menuitem label="2. Apuestas políticas">
+                        <menu>
+                            <menuitem label="2  Apuestas políticas de Confiar" data-page="pag-apuestas"></menuitem>
+                            <menuitem label="2.1 Dimensión territorial" data-page="pag-territorial"></menuitem>
+                            <menuitem label="2.2 Dimensión cultural" data-page="pag-cultural"></menuitem> 
+                            <menuitem label="2.3 Dimensión social" data-page="pag-social"></menuitem>  
+                            <menuitem label="2.4 Dimensión ambiental" data-page="pag-ambiental"></menuitem> 
+                            <menuitem label="2.5 Dimensión económica" data-page="pag-económica"></menuitem>                    
+                        </menu>
+                    </menuitem>    
+                    <menuitem label="Actividades" data-page="pag-actividades"></menuitem>
+                    <menuitem label="Bibliografía" data-page="pag-bibliografia"></menuitem>
+                    <menuitem label="Créditos" data-page="pag-creditos"></menuitem>
+                </menu>
+            </nav>
+            <div id="headerbanner">
+                <img src="img/banner.png" alt="Banner" title="Cooperativismo: Una economía para el Bienvivir" />
+            </div>
+            <h2 class="page-title"></h2>
+        </header>   
+            <section id="pag-politico">
+                <div class="subpage_0">
+                    <div class="box_media">
+                        <img src="content/img1_tit.png" alt="Lo político y la política" title="Lo político y la política"/>                    
+                    </div>                                                        
+                    <blockquote>“A la pregunta por el sentido de la política hay una respuesta tan sencilla y tan concluyente
+                        en sí misma que se diría que otras respuestas están totalmente de más. La respuesta es: el sentido de
+                        la política es la libertad”.
+                        <label>Hannah Arendt.</label>
+                    </blockquote>
+                    <div class="instruction">Haz clic en cada sección de la imagen para conocer la definición de cada concepto..</div>   
+                    <div class="img-informative" id="overlay" title="lo politico y la politica">
+                        <img  class="w-content-controler button" data-content="#ventana_textos_modal" data-property-width="700" data-property-height="500"
+                        src="content/img1-1.png" alt="lo politico"/>
+                        <img class="w-content-controler button" data-content="#ventana_textos_modal2" data-property-width="700" data-property-height="500"
+                        src="content/img1-2.png" alt="lo politico"/>
+                        <div id="ventana_textos_modal" class="w-content" style="display: none;">
+                            <h3>Lo político:</h3>
+                            <div class="row poli">
+                                <div class="col-2 politico">                                   
+                                    <p>
+                                        Hablamos de una reunión de personas que interactúan en un espacio abierto sobre asuntos comunes.
+                                        Lo político hace referencia a esa facultad y necesidad inherente del ser humano por hacer parte
+                                        de un entorno y definir su lugar en el mundo, por establecer una postura clara sobre quién es,
+                                        qué le identifica y cuál es su apuesta de relacionamiento con los demás seres humanos,
+                                        su territorio, la naturaleza y las instituciones que regulan y organizan la sociedad y el territorio
+                                        que habita. <strong>Podríamos decir que lo político es, más ni menos, que la vinculación y la generación de 
+                                        afectos por lo colectivo y por la transformación de las realidades que afectan los territorios.</strong> 
+                                    </p>
+                                </div>
+                                <div class="col-2 politicoimg">
+                                    <div class="box_media">
+                                        <img src="content/img1-1_full.png" alt="lo politico"/>
+                                        <div class="about"><strong>Imagen 2.</strong> Lo político (2019)</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div id="ventana_textos_modal2" class="w-content" style="display: none;">
+                            <h3>La política:</h3>
+                            <div class="row poli">
+                                <div class="col-2 politica">                                    
+                                    <p>
+                                        Hace referencia al conjunto de instituciones y al ordenamiento de lo político. Puede ejercerse en escenarios
+                                        de representación local y en espacios organizativos, es decir, que no se ejerce exclusivamente desde las instancias
+                                        del gobierno nacional o internacional. Hacer política es, por ejemplo, ser parte de una red organizada en la que se
+                                        lucha por objetivos comunes que tengan incidencia y puedan transformar el entorno común. Muchas veces la política 
+                                        está relacionada explícitamente con lo estatal, y aunque este es un escenario importante existen muchas más
+                                        organizaciones que también pueden denominarse como plataformas para vivir la política y la institucionalidad.
+                                        La política, en definitiva, puede representarse, simbólicamente, en la afiliación partidista, en la militancia
+                                        colectiva y a su vez en el lugar de representación de lo público.
+                                    </p>                                                                       
+                                </div>                                
+                                <div class="col-2 politicaimg">
+                                    <div class="box_media">
+                                        <img src="content/img1-2_full.png" alt="lo politico"/>
+                                        <div class="about"><strong>Imagen 3.</strong> La política (2019)</div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <p>
+                                Es importante señalar que no siempre lo colectivo es un bien público y, a su vez, no siempre lo público genera
+                                “bienes” colectivos. En todo caso, las implicaciones por lo colectivo y en lo público conllevan sine qua non
+                                convicciones políticas.
+                            </p>
+                            <p>
+                                En Confiar tenemos escenarios de participación y representación en los que las personas dan cuenta de sus convicciones
+                                políticas por el proyecto solidario que somos, pero a la vez toda Confiar en sí misma es una práctica de lo político. Asociarse a Confiar es una manera contundente de reflejar una mirada política para transformar el mundo desde nuestros propios territorios. Emprender carrera asociativa y directiva configura, a su vez, la posibilidad de hacer política en el gobierno cooperativo y en el sector solidario del país.
+                            </p>                          
+                        </div>                                          
+                    </div>  
+                    <div class="about">
+                        <p>
+                           <strong>magen 1:</strong> Lo político y la política (2019)
+                        </p>
+                    </div> 
+                    <div class="box-text connection">                                           
+                        <p>
+                            <em>Confiar es un proyecto político que se organiza políticamente porque...</em><br/>
+                            Para Confiar, la política y lo político son inherentes al hacer cooperativo, ya que nuestra organización genera los escenarios adecuados para que cualquier persona vinculada a la cooperativa, tenga la oportunidad de formarse como ser político y pueda incidir en los escenarios de participación para transformar y fortalecer la organización y los territorios. Hagamos un breve repaso de lo revisado en unidades
+                            anteriores en torno a nuestra organización: 
+                        </p>
+                    </div>
+                    <p>
+                        Los principios en los que se basan las cooperativas son:
+                    </p>
+                    <ul class="data_list">
+                        <li>
+                            Adhesión libre y voluntaria
+                        </li>
+                        <li>
+                            Gestión democrática por parte de los asociados
+                        </li>
+                        <li>
+                            Participación económica de las personas que integran la cooperativa
+                        </li>
+                        <li>
+                            Autonomía e independencia
+                        </li>
+                        <li>
+                            Educación, formación e información
+                        </li>
+                        <li>
+                            Cooperación entre cooperativas
+                        </li>
+                        <li>
+                            Compromiso con la comunidad
+                        </li>
+                    </ul>
+                    <p>
+                        Así mismo, recordemos las instancias de participación más significativas en nuestra cooperativa:
+                    </p>
+                    <ul class="data_list">
+                        <li>
+                            La Asamblea General de asociados y asociadas                                
+                        </li>
+                        <li>
+                            El Consejo de Administración
+                        </li>
+                        <li>
+                            La Junta de Vigilancia
+                        </li>
+                        <li>
+                            La Revisoría Fiscal
+                        </li>
+                        <li>
+                            El Comité de Educación
+                        </li>
+                        <li>
+                            Los Comités Especiales (Comités de Apelaciones, Comité Electoral)
+                        </li>
+                        <li>
+                            Revisoría Fiscal
+                        </li>
+                    </ul>
+                    <div class="box-text note" label="Nota">
+                        <p>
+                            Si quieres recordar de qué se trata cada una de las anteriores instancias, cómo se eligen
+                            y cuáles son sus funciones, te recomendamos visitar los módulos 1 y 2 de este diplomado.
+                        </p>
+                    </div>                                                                                     
+                </div>
+            </section>
+
+            <section id="pag-apuestas">
+                <div class="subpage_0">  
+                    <h3>2. ¿Y cuáles son las apuestas políticas de Confiar en las diferentes dimensiones de relación?</h3>
+                     <p>
+                        Podemos comprender a Confiar como una organización que se define, principalmente, por su apuesta política.
+                        Partiendo de esto, entenderemos que todas las dimensiones en las que Confiar genera impacto tienen el
+                        propósito y el sentido de ser prácticas políticas, con un enfoque solidario y cooperativo. 
+                     </p>
+                     <div class="box-text connection">
+                        <p>
+                            Veamos lo que representa Confiar desde las diferentes dimensiones que existen en la sociedad y algunos
+                            ejemplos de cómo lo vivimos. Haremos un recorrido por el Libro <strong>Confiar: una conquista solidaria</strong>, el cual recoge los 45 años de historia de Confiar Cooperativa Financiera. En esta publicación nos reconocemos todos los que hemos hecho parte de esta construcción, de sus luchas y de sus logros, y los testimonios relatan cuánto ha tenido que ocurrir para hacer posible esta gesta solidaria.
+                        </p>
+                    </div>                  
+                    <div class="box-text link" label="Extendiendo el saber">
+                        <p>
+                           <strong>Documento:</strong> Confiar 45 años: una conquista solidaria
+                        </p>
+                        <p>
+                           <strong>Extensión:</strong> 287 páginas
+                        </p>
+                        <p>
+                           <strong>Enlace Web:</strong> <a href="https://www.confiar.coop/uploads/imagenes/Documentos%20PDF/2019/Asamblea%20Delegados/libro_45_anos_confiar_2019.pdf" target="_blank">https://www.confiar.coop/[...]</a>
+                        </p>
+                        <p>
+                            <strong>Enunciado:</strong> este libro se hizo a muchas manos y con muchas voces, así como hacemos las cosas en Confiar. Es una publicación que recopila la historia de la Cooperativa en sus primeros 45 años, narra sus orígenes y transformaciones y da cuenta de las vivencias y decisiones que han mantenido como bandera la filosofía del cooperativismo, la solidaridad y la confianza. 
+                        </p>
+                    </div>     
+            </section>
+
+            <section id="pag-territorial" >
+                <div class="subpage_0">
+                    <h4>2.1	Dimensión territorial</h4>                     
+                    <p>
+                        El territorio para Confiar es concebido como el escenario en el que se hace realidad el cooperativismo.
+                        El ejercicio solidario no ocurre de manera limitada en los espacios destinados a la intermediación financiera
+                        y tampoco se limita al intercambio de productos y servicios financieros. El territorio es para Confiar el lugar
+                        en el que los impactos de la economía solidaria pueden hacerse realidad y en el que se pone a prueba la certeza
+                        de que el proceso de humanización del ejercicio político, social, y cultural es posible.
+                    </p> 
+                    <div class="box-text connection">
+                        <p>
+                            Veamos algunos de los aspectos que conforman la dimensión territorial en nuestra cooperativa: 
+                        </p>
+                    </div>
+                    <div class="ctrl-pagination" data-layer-height="770px" data-numeric-pagination="true" data-type="a" >
+                        <li>
+                            <h3>a.	Las agencias</h3>
+                          <blockquote>La presencia de Confiar, dedicada a fortalecer el territorio, consolidó un escenario de encuentro con la gente, 
+                              pues se entendió cabalmente que el resultado de cooperativizar estaba más allá de las cuatro paredes de la agencia.
+                              Esta postura llevó a entender el concepto de intervenir el territorio desde una visión integral, centrada en la
+                              satisfacción de las necesidades esenciales, lo que repercute en el bienvivir. Incorporar el territorio como parte
+                              del hacer no fue, como puede suponerse, una estrategia para realzar las ventas, sino una voluntad para ponderar los
+                              impactos sociales. No se llegó para incidir en la búsqueda de los resultados, sino para disponerse a contribuir en
+                              el desarrollo integral del territorio. Más que el estar es crear una dimensión de extensión: el metaterritorio.
+                              En ese sentido, el hacer y el obrar llevan a resignificar la espacialidad al concretar trasformaciones que enriquecen
+                              lo territorial, lo multiplican, lo pueblan, lo enriquecen.
+                            </blockquote>
+                            <div class="row agencia">
+                                <div class="col-2 agencias">                                    
+                                    <p>
+                                        En la actualidad, Confiar hace presencia en seis departamentos de Colombia (Antioquia, Boyacá, Casanare, 
+                                        Cundinamarca, Meta y Risaralda), territorios donde, en principio, la premisa no es el favorecimiento de 
+                                        la venta de productos financieros per se, sino la generación de oportunidades de vida para las personas que 
+                                        los habitan y construyen sus tejidos. Es así como la dimensión territorial para Confiar se traduce en 50 lugares 
+                                        para agenciar el desarrollo en todas las dimensiones y posibilidades. Confiar hace parte del entramado territorial
+                                        de lugares donde otras entidades financieras no están. Hace presencia donde están las redes de campesinos y 
+                                        campesinas, donde la paz ha sido vulnerada y ahora es la esperanza, donde la clase obrera genera condiciones para 
+                                        la igualdad, donde las mujeres dan sustento a la vida. Para Confiar, el territorio es la posibilidad de hacer 
+                                        posible lo impensable en las lógicas del capital, para quienes no cuentan en un sistema que prioriza la riqueza 
+                                        particular y no la abundancia justa y además colectiva.
+                                    </p>                                                                       
+                                </div>                                
+                                <div class="col-2 agenciasimg">
+                                    <div class="box_media">
+                                        <img src="content/img2.png" alt="agencias"/>
+                                        <div class="about"><strong>Imagen 4.</strong> Las agencias (2019)</div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </li>
+                        <li>
+                            <h3>b. Apuesta por la vivienda: apuesta por los derechos</h3>
+                            <blockquote>
+                                Sólida Vivienda y Hábitat Solidarios S.A.S. es una figura empresarial independiente de la Cooperativa, 
+                                reada a través de la Fundación Confiar. Con su conformación se pretendía —además de ampliar la oferta de
+                                adquisición de una casa propia entre los estratos de menores recursos— actuar directamente en las complejidades
+                                propias del mundo de la construcción e inmobiliario, con todas las dificultades propias de una actividad en la
+                                que inciden variables externas propias del sector, pero con la seguridad de ser necesaria y complementaria
+                                para contribuir en hacer realidad esta aspiración que dignifica a la humanidad y que está consignada en la
+                                Declaración Universal de los Derechos Humanos. 
+                              </blockquote>
+                              <div class="row apuesta">
+                                  <div class="col-2 apuesta">                                    
+                                      <p>
+                                        La vivienda es mucho más que un lugar para estar, es fundamentalmente un espacio para ser. En este sentido,
+                                        Confiar sabe claramente que en este país –y en muchos otros lugares– la vivienda no es un derecho
+                                        garantizado por el Estado y mucho menos priorizado como una condición indispensable para la vida digna.
+                                        En Confiar, ofrecer las posibilidades de un lugar para el desarrollo de la vida se convierte en una apuesta
+                                        política porque no es cualquier casa para cualquier persona, es vivienda en armonía con el entorno,
+                                        con la naturaleza y con los territorios, para la consolidación de los proyectos vitales, del ser y del
+                                        estar de personas de sectores vulnerados e invisibilizados históricamente en esta sociedad.
+                                      </p>                                                                       
+                                  </div>                                
+                                  <div class="col-2 apuestaimg">
+                                      <div class="box_media">
+                                          <img src="content/img3.png" alt="apuesta"/>
+                                          <div class="about"><strong>Imagen 5.</strong> Apuesta por la vivienda (2019)</div>
+                                      </div>
+                                  </div>
+                              </div>  
+                        </li>
+                        <li>
+                            <h3>c. Círculos virtuosos</h3>
+                            <blockquote>
+                                La conceptualización de la Transferencia Solidaria también incluye el hacer por y con el sector cooperativo y la economía
+                                solidaria gracias a los procesos de integración, el vínculo con la comunidad y el territorio con el ánimo de hacer intervenciones
+                                que propicien su transformación y desarrollo. En este último caso son relevantes los proyectos de construcción de vivienda con
+                                las intervenciones de Sólida y las alianzas con los constructores. Otro tema no menos importante en relación con el territorio
+                                es la acción coordinada con organizaciones sociales y comunitarias en la estrategia de los círculos virtuosos, de la cual es modelo
+                                y expresión la organización de los acueductos veredales. La densidad, la forma y sentido de la vida en Confiar está en la historia
+                                de la realización y revelación de sus actos cotidianos como una verdad incontrovertible, cuya huella abre los caminos para el bienvivir.  
+                              </blockquote>
+                              <div class="row circulos">
+                                  <div class="col-2 circulo">                                    
+                                      <p>
+                                        En Confiar las redes y las alianzas con organizaciones comunitarias y sociales para la defensa de la vida, del agua, de la tierra
+                                        y de los derechos, es la concreción de la apuesta por el fortalecimiento del tejido social y de los circuitos
+                                        solidarios. Asimismo, entendemos que la dimensión simbólica de las construcciones de territorios más solidarios
+                                        y sostenibles se da cuando todos los actores y todas las organizaciones tejen relaciones económicas para garantizar
+                                        la vida, y cuando se dan relaciones desde la reciprocidad, el intercambio, el apoyo mutuo, la transferencia
+                                        solidaria y el reconocimiento de las diversidades. Esta es una necesidad ética y política imprescindible.
+                                      </p>                                                                       
+                                  </div>                                
+                                  <div class="col-2 circuloimg">
+                                      <div class="box_media">
+                                          <img src="content/img4.png" alt="apuesta"/>
+                                          <div class="about"><strong>Imagen 6.</strong> Círculos virtuosos (2019)</div>
+                                      </div>
+                                  </div>
+                              </div>                              
+                        </li>
+                      </div>
+                      <div class="instruction">
+                        Haga clic sobre cada letra para estudiar los aspectos de la dimensión territorial.
+                      </div>                             
+            </section>
+
+            <section id="pag-cultural" >
+                <div class="subpage_0">
+                    <h4>2.2	Dimensión cultural</h4>                     
+                    <p>
+                        La dimensión cultural para Confiar está definida por la promoción, divulgación y creación de estrategias
+                        artísticas y culturales que tienen como propósito fortalecer el intercambio de ideas y de proyectos
+                        colectivos en los territorios, activar el pensamiento crítico y aportar a la transformación social.
+                    </p> 
+                    <p>
+                        Además, Confiar en sí misma representa una expresión cultural del pensamiento solidario, no son las manifestaciones
+                        artísticas como mero espectáculo, sino cómo, a través de ellas (el arte, la literatura, la música, el teatro,
+                        la danza, la escritura, etcétera) se pueden instalar lógicas distintas a las hegemónicas, y posibilidades
+                        de transformación del pensamiento hacia uno más solidario, fraterno y cooperativo.
+                    </p>
+                    <div class="box-text connection">
+                        <p>
+                            Veamos los componentes de la dimensión cultural para nuestra Cooperativa: 
+                        </p>
+                    </div>
+                    <div class="ctrl-pagination" data-layer-height="770px" data-numeric-pagination="true" data-type="a" >
+                        <li>
+                            <h3>a. Sello editorial</h3>                          
+                            <div class="row sello">
+                                <div class="col-2 sello">                                    
+                                    <blockquote>
+                                        Entre los aportes a la educación y la cultura se dio vía libre a una iniciativa de fomento a la lectura
+                                        con la creación de la Línea Editorial, consecuente con los caminos de reflexión trazados. En 2003 se
+                                        entregó gratuitamente el primer libro con la edición del texto <strong>Cuentos y semblanzas del trabajo</strong>, selección
+                                        del maestro Elkin Obregón y que tuvo un tiraje de 5.000 ejemplares para entregar a la comunidad asociada y
+                                        a las instituciones culturales y educativas. Una acción de gran acogida en el medio por <strong>su incidencia en la 
+                                        democratización del acceso a la lectura y por su intención de estimular esa necesidad del espíritu</strong>, que como
+                                        enfatizó Federico García Lorca, satisface el hambre de saber. La posibilidad de tener un libro entre las manos
+                                        era la manera de llegar a miles de hogares para compartir en la intimidad de la sala, el estudio o la almohada,
+                                        los temas concebidos y pensados para darle a la lectura esa dosis de disfrute que permite tanto la alegría de
+                                        leer y sumar, a la vez, una lectura crítica de la sociedad, que lleve a adquirir una conciencia de comprensión
+                                        de la realidad.
+                                    </blockquote>                                                                       
+                                </div>                                
+                                <div class="col-2 selloimg">
+                                    <div class="box_media">
+                                        <img src="content/img5.png" alt="Sello editorial" title="Sello editorial"/>
+                                        <div class="about"><strong>Imagen 7.</strong> Sello editorial (2019)</div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </li>
+                        <li>
+                            <h3>b. Bazar de la Confianza</h3>                            
+                            <div class="row apuesta">
+                                <div class="col-2 apuesta">                                    
+                                    <blockquote>
+                                        El infaltable encuentro en el Bazar de la Confianza, una fiesta de ciudad, ocurre con el fin de presentar
+                                        el protagonismo de sectores activos de la base social de nuestra Cooperativa, en especial de los jóvenes
+                                        vinculados a los proyectos, las iniciativas productivas de todo tipo de poblaciones y la integración con
+                                        las organizaciones sociales y entidades aliadas y, obviamente, los múltiples beneficios que se generan en
+                                        el ejercicio cooperativo para atender las necesidades de vivienda, educación y acceso a la formación,
+                                        la información y la cultura. Hechos que resaltan la vigencia y el vigor de la calidez institucional y dan
+                                        cuenta de la sumatoria que ratifica ese compromiso cooperativo como parte del acompañamiento de los empleados
+                                        en todos los frentes de servicio y va hasta la expansión de estas prácticas por todos los territorios y
+                                        regiones.
+                                    </blockquote>                                                                       
+                                </div>                                
+                                <div class="col-2 apuestaimg">
+                                    <div class="box_media">
+                                        <img src="content/img6.png" alt="bazar de la confianza" title="Bazar de la Confianza"/>
+                                        <div class="about"><strong>Imagen 8.</strong> Bazar de la confianza (2019)</div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </li>
+                        <li>
+                            <h3>c. Mujeres Confiar</h3>                            
+                            <div class="row mujeres">
+                                <div class="col-2 mujeres">                                    
+                                    <blockquote>
+                                        La creación de la estrategia Mujeres Confiar, que se presentó en mayo de 2017, refleja justamente un compromiso y ejemplifica el destino
+                                        y la dirección del aporte solidario en una estrategia de noble impacto que pone en marcha la valoración del papel de la mujer en la trasformación de la sociedad.
+                                        El eje de este programa es un portal dedicado a difundir, formar, recopilar y destacar la labor de tantas mujeres que han contribuido con su labor,
+                                        pensamiento y compromiso a dignificar la condición de la mujer y de las comunidades. El portal cuenta con un equipo dedicado a nutrir los
+                                        contenidos textuales y audiovisuales en los que artículos, columnas y videos entregan un mosaico que alterna la información, las reseñas o los perfiles
+                                        con colaboraciones, textos y ensayos, cuyo enfoque configura el orbe misional de la mujer en la cimentación de la sociedad. Las personalidades de María Tila Uribe,
+                                        Aura López y Patricia Ariza, a quienes están dedicados bellos documentales, ejemplifican la intencionalidad de esta estrategia. Mujeres Confiar se enmarca en
+                                        esa estética del compromiso y caracteriza la postura del cooperativizar en cuanto a innovar en las posibilidades del balance social, al construir un escenario para destacar
+                                        los roles de la mujer, tanto en la trascendencia histórica o cultural como en el sorprendente universo de lo cotidiano
+                                    </blockquote>                                                                       
+                                </div>                                
+                                <div class="col-2 mujeresimg">
+                                    <div class="box_media">
+                                        <a href="https://www.youtube.com/watch?time_continue=29&v=7EgSioV8TwU" target="_blanck"><img src="content/img7.png" alt="Mujeres Confiar" title="Mujeres Confiar"/></a>     
+                                    </div>
+                                </div>
+                            </div>                              
+                        </li>
+                        <li>
+                            <h3>d.	Exposiciones y agenda cultural</h3>                            
+                            <div class="row mujeres">
+                                <div class="col-2 mujeres">                                    
+                                    <p>
+                                        La agenda cultural y las exposiciones tienen como propósito fortalecer el 
+                                        escenario de la cultura desde el pensamiento crítico, con un fuerte componente 
+                                        de circulación y de incidencia política desde las distintas expresiones artísticas existentes. 
+                                        La Casa de la Cultura y la Cooperación, ubicada en Medellín, es un espacio para tejer las apuestas 
+                                        educativas, culturales, las relaciones con otras organizaciones y colectivos, la realización de los 
+                                        foros y conversatorios. Es la expresión arquitectónica de una apuesta política y solidaria por una cultura diferente, 
+                                        transformadora y fecundadora de ideales de transformación.
+                                    </p>                                                                       
+                                </div>                                
+                                <div class="col-2 mujeresimg">
+                                    <div class="box_media">
+                                        <img src="content/img8.png" alt="Exposiciones y agenda cultural" title="Exposiciones y agenda cultural"/>
+                                        <div class="about"><strong>Imagen 9.</strong> Exposiciones y agenda cultural (2019)</div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <p>
+                                Sin embargo, estas apuestas se extienden mucho más allá de la Casa de la Cultura y del territorio de la capital antioqueña.
+                                Lo hemos logrado en forma de alianzas con las organizaciones de esos municipios y barrios en los que logramos incidir con nuestro
+                                proyecto cooperativo, gracias a un trabajo de divulgación en plataformas digitales que permite el acceso al conocimiento y a los
+                                contenidos culturales y con apoyos de diversa índole a la oferta artística y cultural en los territorios.
+                            </p>                            
+                        </li>
+                    </div>
+                    <div class="instruction">
+                        Haga clic sobre cada letra para estudiar los componentes de la dimensión cultural
+                    </div> 
+                </div>                                  
+            </section>
+
+            <section id="pag-social" >
+                <div class="subpage_0">
+                    <h4>2.3	Dimensión social</h4>                     
+                    <p>
+                        La dimensión social para Confiar abarca un amplio paisaje de diversidades.
+                        En la vida social se encuentran las principales motivaciones de Confiar para ser un proyecto político,
+                        pues nuestra necesidad de transformación y de cambio social nos llama a la movilización constante.
+                        Desde la observación y la crítica de la realidad, proponemos nuevas visiones y la posibilidad de construir
+                        colectivamente un mundo alternativo. Así trabajamos en identificar las problemáticas y nos articulamos a
+                        procesos educativos, culturales y artísticos. Laboramos de la mano con organizaciones de trayectoria
+                        política transformadora en los territorios, con el fin de presentar el trabajo cooperativo como una
+                        realidad y una verdadera alternativa que responda a sus necesidades. La dimensión social está plenamente
+                        conectada con todas las demás dimensiones, pero especialmente con la territorial.
+                    </p>                     
+                    <div class="box-text connection">
+                        <p>
+                            Revisemos la manera en la que la Fundación Confiar tomó forma en el interior de la Cooperativa:  
+                        </p>
+                    </div>
+                    <blockquote>
+                        La decisión que materializó la Fundación en el escenario de Confiar fue tomada en una asamblea extraordinaria.
+                        Así se dio aprobación y vuelo a una estrategia institucional cuyo propósito y misión era fortalecer los servicios
+                        educativos y culturales, a la par de aquella pedagogía solidaria que identificaba y diferenciaba a Confiar.
+                        El origen de la Fundación está unido al compromiso de generar dinámicas para el desarrollo social de las personas
+                        asociadas y con ellas al grupo familiar, y en este la lectura del entorno social y cultural de las comunidades al
+                        cual pertenece. Ese colectivo de afiliados y afiliadas en continuo crecimiento daba lugar a las diversas actividades
+                        y programaciones concebidas para cumplir con los principios cooperativos, en especial los relacionados con la
+                        formación y la educación. 
+                    </blockquote>
+                    <div class="ctrl" data-layer-height="550px" >
+                        <li>
+                            <h3>En-Claves Juveniles Territoriales</h3>                          
+                            <div class="row en-claves">
+                                <div class="col-2 en-claves">                                    
+                                    <blockquote>
+                                        Entre los aportes a la educación y la cultura se dio vía libre a una iniciativa de fomento a la lectura
+                                        con la creación de la Línea Editorial, consecuente con los caminos de reflexión trazados. En 2003 se
+                                        entregó gratuitamente el primer libro con la edición del texto <strong>Cuentos y semblanzas del trabajo</strong>, selección
+                                        del maestro Elkin Obregón y que tuvo un tiraje de 5.000 ejemplares para entregar a la comunidad asociada y
+                                        a las instituciones culturales y educativas. Una acción de gran acogida en el medio por <strong>su incidencia en la 
+                                        democratización del acceso a la lectura y por su intención de estimular esa necesidad del espíritu</strong>, que como
+                                        enfatizó Federico García Lorca, satisface el hambre de saber. La posibilidad de tener un libro entre las manos
+                                        era la manera de llegar a miles de hogares para compartir en la intimidad de la sala, el estudio o la almohada,
+                                        los temas concebidos y pensados para darle a la lectura esa dosis de disfrute que permite tanto la alegría de
+                                        leer y sumar, a la vez, una lectura crítica de la sociedad, que lleve a adquirir una conciencia de comprensión
+                                        de la realidad.
+                                    </blockquote>                                                                       
+                                </div>                                
+                                <div class="col-2 en-clavesimg">
+                                    <div class="box_media">
+                                        <img src="content/img9.png" alt="En-Claves Juveniles Territoriales" title="En-Claves Juveniles Territoriales"/>
+                                        <div class="about"><strong>Imagen 10.</strong> En-Claves Juveniles Territoriales (2019</div>
+                                    </div>
+                                </div>
+                            </div>  
+                        </li>                                             
+                    </div>                    
+                </div>                                  
+            </section>
+
+            <section id="pag-ambiental" >
+                <div class="subpage_0">
+                    <h4>2.4	Dimensión ambiental</h4>                     
+                    <p>
+                        Comprendemos la dimensión ambiental como un elemento esencial, pues en esta es posible la expresión del bienvivir
+                        a partir de una relación justa entre el ser humano y la naturaleza. Reconocemos las afectaciones que sobre el 
+                        medio ambiente tiene el modelo económico extractivista y sus repercusiones en los territorios; por ello, de manera
+                        decidida, aportamos a su conservación, a través de acciones solidarias que redunden en una vida digna para las 
+                        comunidades y el entorno en el que habitan.
+                    </p>                                                       
+                    <div class="ctrl-pagination" data-layer-height="780px" data-numeric-pagination="true" data-type="a" >
+                        <li>
+                            <h3>a. El Edén</h3>                          
+                            <div class="row ambiental">
+                                <div class="col-2 eden">                                    
+                                    <p>
+                                        El Edén Reserva Natural de la Sociedad Civil está ubicada en el kilómetro 92 de la autopista Medellín – Bogotá. Es un espacio de 42 hectáreas
+                                        que la Cooperativa ha destinado para la restauración del ecosistema y la preservación de un reducto de bosque
+                                        húmedo tropical, con el fin de que en él permanezcan y se reproduzcan especies endémicas de la zona, y a la vez 
+                                        se pueda conectar con otros sectores protegidos, generando así un corredor ecológico que permita la conservación de 
+                                        la vida y procesos pedagógicos y de organización de la comunidad. 
+                                    </p>                                                                       
+                                </div>                                
+                                <div class="col-2 edenimg">
+                                    <div class="box_media">
+                                        <iframe src="https://www.youtube.com/embed/PS45t7xdj_0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>                                      
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote>
+                                El paso de transformar un escenario recreativo en una reserva natural para aportar con ello a una acción concreta y eficaz en la protección del medio ambiente,
+                                y hacer una trasferencia solidaria al planeta, representó un paso importante para nuestro ejercicio político. 
+                                La propuesta inquietó a muchos: ¿sacrificar una infraestructura turística para convertirla en una reserva natural, 
+                                perdiendo el uso de esparcimiento familiar? Muchas podían ser las respuestas, pero en lo práctico y en cuanto a la 
+                                utilización recreativa para el asociado, basta mirar la oferta de servicios turísticos regionales, nacionales o 
+                                internacionales para evidenciar que la tradicional oferta en El Paraíso estaba fuera de base, en un contexto de 
+                                difícil competencia e inviable para ofrecer servicios en la dimensión de una adecuada propuesta hotelera. 
+                                El Edén posibilita, en su trasformación, una opción de disfrute cualificado al ofrecer tanto a los asociados, a 
+                                la comunidad cercana —que naturalmente sigue vinculada y beneficiada por el proyecto—, al sector educativo, a los 
+                                investigadores y defensores del medio ambiente un espacio para el avistamiento de fauna, aprendizaje de la riqueza 
+                                vegetal, contacto saludable con la naturaleza y convicción de compartir un legado para el bienestar de generaciones 
+                                futuras. 
+                            </blockquote>  
+                        </li> 
+                        <li>
+                            <h3>b.	Campaña por el cuidado del agua como bien públicon</h3>                          
+                            <div class="row campaña">
+                                <div class="col-2 campaña">                                    
+                                    <p>
+                                        Desde hace varios años, la Cooperativa ha respaldado y articulado acciones en pro del agua como un bien público, 
+                                        entre las que podemos contar la campaña del referendo por el agua y las escuelas comunitarias del agua 
+                                        (procesos de formación para la cualificación de la gestión de los acueductos comunitarios y para el fortalecimiento 
+                                        organizativo de los mismos). Además, se han impulsado acciones legislativas para impulsar un marco jurídico que 
+                                        fortalezca, proteja y brinde instrumentos de gestión para las iniciativas ciudadanas que permiten el acceso al agua. 
+                                    </p>                                                                       
+                                </div>                                
+                                <div class="col-2 campañaimg">
+                                    <div class="box_media">
+                                        <img src="content/img11.png" alt="Campaña por el cuidado del agua como bien públicon" title="Campaña por el cuidado del agua como bien públicon"/>                                      
+                                    </div>
+                                    <div class="about"><strong>Imagen 11.</strong> Cuidado del agua. Recuperado de Pixabay.com el 3 de junio de 2019</div>                                    
+                                </div>
+                            </div>                             
+                        </li>                                                                    
+                    </div>  
+                    <div class="instruction">
+                        Haga clic sobre cada letra para estudiar los elementos de la dimensión ambiental.
+                    </div>                                   
+                </div>                                  
+            </section>
+
+            <section id="pag-económica" >
+                <div class="subpage_0">
+                    <h4>2.5	Dimensión económica</h4>                     
+                    <p>
+                        La dimensión económica en Confiar pasa por comprender que cualquier tipo de intermediación de carácter financiero y/o económico tiene como eje central
+                        al ser humano antes que el dinero. Comprender esto que parece tan evidente —pero que en muchos escenarios no lo
+                        es—, nos ha permitido hacer posible un proyecto en el que la acumulación de dinero o el crecimiento no son una
+                        prioridad, y en cambio, tenemos como un principio estructural la dignificación del ser humano. Estas decisiones
+                        constituyen una postura política, por lo tanto, la dimensión económica en nuestra cooperativa está construida
+                        desde decisiones que atraviesan al ser humano y la transformación de su entorno como principio y fin de nuestro
+                        ejercicio económico. 
+                    </p> 
+                    <div class="box-text connection">
+                        <p>
+                            Veamos a continuación dos ejemplos que nos permiten comprender esta dimensión: 
+                        </p>
+                    </div>                                                      
+                    <div class="ctrl-pagination" data-layer-height="800px" data-numeric-pagination="true" data-type="a" >
+                        <li>
+                            <h3>a.	Intermediación financiera con solidaridad</h3>                          
+                            <div class="row intermediación">
+                                <div class="col-2 intermediación">                                    
+                                    <p>
+                                        Ahorrar con paciencia y gastar con parsimonia es el sustento filosófico de nuestra actividad financiera. 
+                                        Esto se ve materializado en la posibilidad de ofrecer un portafolio de productos y servicios tan incluyentes 
+                                        como las regulaciones del medio nos lo permiten. En este sentido, y siguiendo con una de las enseñanzas de Luis 
+                                        Razeto, la solidaridad no debe pensarse antes o después de la actividad económica, sino que debe hacer presencia 
+                                        permanente. Esto lo traducimos en la intermediación financiera con solidaridad, una intermediación financiera 
+                                        que privilegia el acceso y las posibilidades para las personas
+                                    </p>                                                                       
+                                </div>                                
+                                <div class="col-2 intermediaciónimg">
+                                    <div class="box_media">
+                                        <img src="content/img12.png" alt="Intermediación financiera con solidaridad" title="Intermediación financiera con solidaridad"/>                                      
+                                    </div>
+                                    <div class="about"><strong>Imagen 12.</strong> Ahorrar con paciencia y gastar con parsimonia. Recuperado de Pixabay.com el 3 de junio de 2019</div> 
+                                </div>
+                            </div>
+                            <p>
+                                Confiar ha buscado incentivar más el ahorro que el crédito, tratando de dar a entender a la base social que la mejor manera de cumplir los sueños es planeando
+                                organizando la economía y no necesariamente endeudándose. Por ello, ofrece Ahorro a la vista, disponible para que
+                                cada persona pueda mover su dinero como quiera; productos como los CDT y CDAT, que permiten ahorros programados e 
+                                intereses solidarios; Títulos futuro y Ahorro con futuro para niños, niñas y jóvenes.                                  
+                            </p> 
+                            <p>
+                                Sin embargo, promueve el endeudamiento para la compra de casa, pues es consciente de que la vivienda propia y digna hace parte del bienvivir. 
+                                Ofrece tarjetas de crédito, pues contamos con personas dentro de nuestra base social que viajan a otros países o que 
+                                usan herramientas digitales, y esta tarjeta se ha vuelto indispensable para este tipo de acciones, pero intenta 
+                                siempre mantener una tasa de interés muy baja para que muchas personas puedan acceder a ella. 
+                                De este modo se garantiza que el crédito no necesariamente se convierta en un proceso complejo y lleno de 
+                                requisitos, pues una tarjeta de crédito permite esta posibilidad siempre a la mano. También está el Crediaporte, 
+                                el cual es un reconocimiento a la solidaridad de cada persona asociada, pues depende de los aportes sociales y se 
+                                puede acceder a este de manera muy fácil y rápida
+                            </p> 
+                            <blockquote>
+                                Confiar ha tenido siempre presente cómo con acertada atención a su desarrollo y crecimiento, se supo 
+                                señalar con claridad el modo para conjugar el compromiso social con su actividad financiera. El 
+                                comportamiento de la Cooperativa en el ámbito económico cultivó la confianza en los estamentos 
+                                institucionales. Su nombre era sinónimo de cultura solidaria, su actividad, ejemplo de integración; 
+                                su manejo financiero, cuidadoso y certero. El compromiso con el pacto de ser auténtica cooperativa se 
+                                mantuvo más allá de las veleidades del reconocimiento y adoptó, por el contrario, un énfasis en el 
+                                universo verbal del cooperativismo para enfrentar esa tendencia que apañaba el dominio con la proclama
+                                de bancarizar la economía mundial, y ante esa peligrosa orden antepuso el cooperativizar, pensando en 
+                                ampliar el acceso cooperativo con su espíritu incluyente y demostrando que en Confiar los vinculados 
+                                son sujetos de desarrollo y no objetos del lucro.
+                            </blockquote>
+                        </li> 
+                        <li>
+                            <h3>b.	Fomentamos</h3>                          
+                            <div class="row fomentamos">
+                                <div class="col-2 fomentamos">                                    
+                                    <p>
+                                        Fomentamos es una corporación que materializa una estrategia de integración con diversas organizaciones de las ciudades o territorios en los cuales Confiar
+                                        tiene presencia. Con esta estrategia busca generar procesos de inclusión financiera para poblaciones 
+                                        tradicionalmente excluidas del sector financiera, apoyados en una metodología que se denominó círculos solidarios. 
+                                        Esta metodología, a la vez que posibilita el acceso a microcréditos que financian pequeñas iniciativas económicas, 
+                                        promueve la formación en torno a buenas prácticas de ahorro y crédito con solidaridad. Actualmente Fomentamos tiene 
+                                        presencia en el Valle de Aburrá, el Urabá antioqueño y el municipio de Soacha. El 80% de sus participantes son 
+                                        mujeres. 
+                                    </p>                                                                       
+                                </div>                                
+                                <div class="col-2 fomentamosimg">
+                                    <div class="box_media">
+                                        <img src="content/img13.png" alt="Fomentamos" title="	Fomentamos"/>                                      
+                                    </div>
+                                    <div class="about"><strong>Imagen 13.</strong> Recuperado de: <a href="http://www.fomentamos.com.co/" target="_blanck">http://www.fomentamos.com.co</a> el 3 de junio de 2019</div>                                    
+                                </div>
+                            </div>
+                            <blockquote>
+                                Entre los programas y actividades que continuaban entrelazando la mediación financiera y la práctica solidaria se destaca, en el año 2003, la creación de la Corporación Fomentamos, 
+                                en asocio con 11 organizaciones entre cooperativas y ONG, para llevar servicios y productos de microfinanzas a 
+                                los sectores más marginales. Esto se logró con la estrategia de los círculos o grupos solidarios, en los cuales 
+                                no hay un sujeto, un individuo responsable de las acreencias, sino que se erige un sujeto grupal donde cada uno es 
+                                responsable y codeudor del otro. El proyecto piloto se realizó en el barrio Moravia de Medellín, una comunidad que 
+                                creció en las invasiones y alrededor de los depósitos de basura de la ciudad, sumamente vulnerable. Esta comunidad 
+                                fue la primera depositaria de los créditos que le posibilitaban crear y fortalecer sus emprendimientos alrededor de 
+                                sus oficios y saberes. 
+                            </blockquote>                             
+                        </li>                                                                                            
+                    </div>  
+                    <div class="instruction">
+                        Haga clic sobre cada letra para estudiar los ejemplos de la dimensión económica.
+                    </div> 
+                    <div class="box-text connection">
+                        <p>
+                            Ahora, te invitamos a realizar la siguiente actividad que te ayudará a recopilar conceptos importantes de esta unidad y 
+                            repasar para finalizar el estudio. Estas actividades son para tu autoaprendizaje, por eso puedes realizarlas 
+                            cuantas veces quieras hasta identificar las respuestas correctas. Si no logras resolver el ejercicio, es muy 
+                            probable que debas repasar los contenidos o incluso consultar otras fuentes, así que ¡muchos éxitos!
+                        </p>
+                    </div>                                  
+                </div>                                  
+            </section>
+
+            <section id="pag-actividades" ptitle="Actividades de aprendizaje de la unidad ">                
+                <div class="subpage_0">
+                    <div class="box-text activity" label="¿Repasamos?">
+                        <p>
+                            Completa el diagrama arrastrando la dimensión que corresponde con cada definición.                            
+                        </p>
+                    </div>
+                    <div class="act_one">
+                        <div id="arrastra1" class="jpit-activities-droppable" data-verify-type="target" data-act-id="Actividad 1: Arrastrar y soltar ">
+                            <div class="board">
+                                <div class="board_img">  
+                                    <div  class="fillable f1 droppable ui-droppable"  data-target-group="1">                                    
+                                        <img src="content/act1_territorial.png" alt="act1 territorial"/>
+                                    </div>  
+                                    <div class="fillable f2 droppable ui-droppable"  data-target-group="2">
+                                        <img src="content/act1_social.png" alt="act1 social"/>                                    
+                                    </div>    
+                                    <div class="fillable f3 droppable ui-droppable"  data-target-group="3">
+                                        <img src="content/act1_cultural.png" alt="act1 cultural"/>                                       
+                                    </div>  
+                                    <div class="fillable f4 droppable ui-droppable"  data-target-group="4"> 
+                                        <img src="content/act1_eco.png" alt="act1 eco"/>                                      
+                                    </div> 
+                                    <div class="fillable f5 droppable ui-droppable"  data-target-group="5"> 
+                                        <img src="content/act1_economico.png" alt="act1 economico"/>                                    
+                                    </div>                      
+                                </div> 
+                            </div>
+                            <div class="fragment">                                    
+                                <div class="gp_1" data-group="3">CULTURAL</div>
+                                <div class="gp_4" data-group="2">SOCIAL</div> 
+                                <div class="gp_2" data-group="6">CAPITALISTA</div>                               
+                                <div class="gp_2" data-group="4">AMBIENTAL</div> 
+                                <div class="gp_3" data-group="1">TERRITORIAL</div>   
+                                <div class="gp_2" data-group="5">ECONÓMICA</div>  
+                                <div class="gp_2" data-group="6">ESPACIAL</div>                                                              
+                            </div> 
+                            <div class="box_end"></div> 
+                        </div>
+                    </div>                   
+                    <hr class="clear"/>
+                </div>
+                <div class="subpage_1">
+                    <div class="box-text activity" label="Hablemos de la dimensión económica…">
+                        <p>
+                            Identifica y selecciona (haciendo clic sobre ellos) los elementos por los cuales esta dimensión es importante para Confiar. Luego haz clic en el botón “Verificar” para validar el resultado.
+                        </p>                        
+                    </div>
+                    <div id="act2" class="jpit-activities-selection Seleccionar_1" data-act-id="Actividad 2: Selecciona la nota que responde" data-parent-mark-selector="false" data-mode="multi">                            
+                        <div  class="fondo-act_2"> 
+                            <div id="img1" class="grp incorrect" data-group="1"> 
+                            </div>
+                            <div id="img2" class="grp incorrect" data-group="1">                             
+                            </div> 
+                            <div id="img3" class="grp correct" data-group="1" data-correct="true"> 
+                            </div>
+                            <div id="img4" class="grp correct" data-group="1" data-correct="true">                             
+                            </div>                            
+                        </div>    
+                        <div class="box_end"></div>    
+                    </div> 
+                    <hr class="clear"/>                        
+                </div>                
+                <div class="subpage_2"> 
+                    <div class="box-text activity" label="Concluyamos:">
+                        <p>
+                            Para terminar el estudio de este documento, marca Sí/No en cada enunciado para identificar algunos de los principios cooperativos. Al finalizar, 
+                            puedes obtener tu resultado y clasificar de nuevo los principios incorrectamente clasificados
+                        </p>                        
+                    </div>
+                    <div class="fondo-act_3">
+                        <div class="jpit-activities-check" data-act-id="Actividad 3: Marca Sí/No">
+                            <words>
+                                <li data-val="true">Adhesión libre y voluntaria.</li>
+                                <li data-val="true">Autonomía e independencia.</li>
+                                <li>Extracción de recursos naturales con el fin de hacer sostenible la industria y el consumo.</li>
+                                <li data-val="true">Educación, formación e información.</li>
+                                <li>Compromiso con el crecimiento económico.</li>                
+                            </words>
+                            <div class="board2">
+                                <div class="check_left">
+                                    <div class="play">
+                                        <p>Es un principio cooperativo de Confiar:</p>
+                                        <div class="word_content"> </div>
+                                        <div class="buttons">
+                                            <button class="yes general">Si</button>
+                                            <button class="not general">No</button>
+                                        </div>
+                                    </div>
+                                    <div class="box_conclution">
+                                        <h3>¡Ha finalizado!</h3>
+                                        <p>Al clasificar ha tenido los siguientes aciertos y desaciertos:</p>
+                                        <p>
+                                            <strong>Aciertos:</strong>
+                                            <span class="correct_words"></span>
+                                        </p>
+                                        <p>
+                                            <strong>Desaciertos:</strong>
+                                            <span class="wrong_words"></span>
+                                        </p>
+                                        <div class="buttons">
+                                            <button class="general reload">Vovler a clasificar las ciudades incorrectamente clasificadas</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="check_right">
+                                    <div class="box_result">
+                                        <div class="correct">
+                                            <div class="hits">0</div>
+                                            <div class="text">Aciertos</div>
+                                        </div>
+                                        <div class="wrong">
+                                            <div class="miss">0</div>
+                                            <div class="text">Desaciertos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="clear"/>                   
+                </div>
+            </section>
+            
+            <section id="pag-bibliografia"  ptitle="Bibliografía">
+                <div class="subpage_0">
+                    <ul class="data_list">
+                        <li>
+                            Confiar Cooperativa Financiera, (2019). Confiar 45 años: una conquista solidaria. Recuperado de:   
+                            <a href="https://www.confiar.coop/noticia/libro-45-confiar-una-conquista-solidaria" target="_blank">
+                                https://www.confiar.coop/noticia/[...]</a> el 15 junio de 2019.
+                        </li>
+                        <li>
+                            Confiar Cooperativa Financiera, (2017).Día del sobregiro. Recuperado de:
+                            <a href="https://www.youtube.com/watch?v=vFGx9jDfJJg&list=PLQC7hDfLJSKk5hse1lQ0mkq5dqQjzsgr4&index=3&t=0s el 15 junio de 2019." target="_blank">
+                                https://www.youtube.com/[...]</a>
+                        </li>
+                        <li>
+                            Confiar Cooperativa Financiera, (2017). Reserva natural El Edén, para proteger el milagro de la vida. Recuperado de: 
+                            <a href="https://www.youtube.com/watch?v=fd1QKzo8u0A&list=PLQC7hDfLJSKk5hse1lQ0mkq5dqQjzsgr4&index=3 el 15 junio de 2019." target="_blank">
+                                https://www.youtube.com/[...]</a>
+                        </li>            
+                    </ul>
+                </div>
+            </section>
+
+            <section id="pag-creditos" ptitle="Créditos">
+                <div class="subpage_0" id="credits_subpage">
+                    <div>
+                        <h3>INVESTIGACIÓN Y DESARROLLO DE CONTENIDOS</h3>
+                        <h4>Plataforma Solidaria Confiar</h4>
+                        <cite>Alejandro López Carmona</cite>
+                        <p><strong>Director Fundación Confiar</strong></p>
+                        <p><strong>José García</strong></p>
+                        <cite>Director Escuela Confiar</cite>
+                        <cite>Jenny Giraldo García</cite>
+                        <p><strong>Directora de Formación Confiar</strong></p>
+                        <cite>Cristina Amariles Mejía</cite>                        
+                        <p><strong>Asociada Confiar</strong></p>
+                        <cite>Oriana C. Zapata Ochoa</cite>
+                        <p><strong>Gestora Educativa</strong></p>
+                    </div>
+                    <div>
+                        <h3>ASESORÍA PEDAGÓGICA Y DISEÑO INSTRUCCIONAL</h3>
+                        <cite>Carolina Llanos Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>CORRECCIÓN DE ESTILOS</h3>
+                    </div>
+                    <div>
+                        <h3>DISEÑO GRÁFICO</h3>
+                        <cite>Juliana Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>INTEGRACIÓN DE CONTENIDOS</h3>
+                        <cite></cite>
+                    </div>
+                    <div>
+                        <h3>REVISIÓN DE CALIDAD</h3>
+                        <cite></cite>
+                    </div>
+                    <div>
+                        <h3>GESTIÓN TÉCNICA Y ADMINISTRATIVA</h3>
+                        <cite>David Herney Bernal García</cite>
+                    </div>  
+                    <div>
+                        <h3>Producción</h3>
+                        <p class="logos">
+                            <a href="https://escuela.confiar.coop/" target="_blank">
+                                <img src="img/logo_escuela.png" alt="logo y enlace escuela confiar"/>
+                            </a>
+                            <a href="https://bambuco.co/" target="_blank">
+                                <img src="img/logo_bambuco_confiar.png" alt="logo y enlace de bambuco"/>
+                            </a>
+                        </p>
+                        <div class="editions">
+                            <p>1ª edición: junio de 2019</p>
+                        </div>
+                    </div>
+                    <div>
+                        <strong>
+                            Un producto educativo y sin ánimo de lucro de la Escuela Confiar
+                        </strong>
+                        <p>
+                            <a href="https://www.confiar.coop/" target="_blank">www.confiar.coop</a>
+                        </p>
+                        <p>
+                            <a href="https://escuela.confiar.coop/" target="_blank">escuela.confiar.coop</a>
+                        </p>
+                    </div>
+                </div>     
+            </section>
+        </main>
+
+        <footer class="not_print">
+            <div class="measuring-progress" data-type="horizontal"></div>
+
+            <div id="subpages_menu">
+                <div class="button" previous-page></div>
+                <ul class="button" subpages-menu></ul>
+                <div class="button" next-page></div>
+            </div>
+
+            <div id="page_number"></div>
+        </footer>
+
+    </div>
+
+    <div id="results_page" style="display:none;">
+        <h2>Resumen de su avance en la lectura del documento</h2>
+        <h3>Páginas visitadas</h3>
+        <p>En verde, aquellas páginas que ya ha visitado.</p>
+        <div id="results_page_visited" class="container"></div>
+        <br class="clear" />
+        <h3>Actividades de aprendizaje</h3>
+        <div id="results_page_activities"></div>
+    </div>
+
+    <div id="printent_content" style="display:none;">
+        <div class="content"></div>
+        <div class="button_container">
+            <button class="general button" onclick="window.print();">Imprimir</button>
+            <button id="printent_back" class="general button" >Volver</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Diplomado Bimodal</title>
+    <link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_quiz.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_mark.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_wordpuzzle.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_crossword.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_zoom.css" rel="stylesheet" type="text/css">
+    <link href="components/csscircle/circle.min.css" rel="stylesheet" type="text/css">
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+<!--jQuery components -->
+    <script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+
+    <script src="components/mediaelementjs/mediaelement-and-player.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/mediaelementjs/mediaelementplayer.css" type="text/css" />
+
+    <script src="components/maphilight/jquery.maphilight.min.js" type="text/javascript"></script>
+<!--End jQuery components -->
+
+    <script src="components/pit/jpit_api.js"></script>
+    <script src="components/pit/utilities/jpit_utilities.js"></script>
+    <script src="components/pit/activity/jpit_activity.js"></script>
+    <script src="components/pit/resources/jpit_resource.js"></script>
+    <script src="components/pit/activity/quiz/jpit_activity_quiz.js"></script>
+    <script src="components/pit/activity/mark/jpit_activity_mark.js"></script>
+    <script src="components/pit/activity/wordpuzzle/jpit_activity_wordpuzzle.js"></script>
+    <script src="components/pit/activity/droppable/jpit_activity_droppable.js"></script>
+    <script src="components/pit/activity/crossword/jpit_activity_crossword.js"></script>
+    <script src="components/pit/activity/cloze/jpit_activity_cloze.js"></script>
+    <script src="components/pit/activity/form/jpit_activity_form.js"></script>
+    <script src="components/pit/activity/sortable/jpit_activity_sortable.js"></script>
+    <script src="components/pit/activity/check/jpit_activity_check.js"></script>
+    <script src="components/pit/resources/movi/jpit_resource_movi.js"></script>
+    <script src="components/pit/resources/zoom/jpit_resource_zoom.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/lang.es.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/mobilelib.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+    <script src="components/scorm/scorm_api.js"> </script>
+
+    <style type='text/css'>
+
+        body {
+            background-color: rgba(242, 242, 242, 0.7);
+        }
+
+        body.loading {
+            text-align: center;
+        }
+
+        body.loading:after {
+            content: "";
+            background: url(img/loading.gif) no-repeat bottom center;
+            width: 130px;
+            height: 30px;
+            display: block;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+        body.loading #body {
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="loading" data-debug="true" data-display-mode="onlypages" data-approve-limit="70" data-activities-percentaje="60" data-mobile-mode="512">
+    <div id="body" class="not_print">
+        <div id="not_scorm_msg" style="display: none;"></div>
+
+        <nav label="Características globales" class="globals">
+            <menu>
+                <menuitem data-global-id="results"><div title="Progreso" class="tooltip" data-position-at="bottom"></div></menuitem>
+                <menuitem data-global-id="return">
+                    <div title="Maximizar" class="tooltip maximize" data-position-at="bottom"></div>
+                    <div title="Minimizar" class="tooltip minimize" data-position-at="bottom"></div>
+                </menuitem>
+                <menuitem data-global-id="close_all"><div title="Regresar" class="tooltip" data-position-at="bottom"></div></menuitem>
+            </menu>
+        </nav>
+
+        <main style="display: none;">
+
+            <header>
+            <div id="logos">
+                <img src="img/logo_escuela.png" alt="logo escuela de confiar" title="Escuela Confiar"/>
+                <img src="img/logo_confiar.png" alt="Cooperativa Confiar" title="Cooperativa Confiar" />
+            </div>
+            <nav label="Principal" class="horizontal main" data-offset="true">
+                <menu>
+                    <menuitem label="1.Colonización" data-page="pag-inicio"></menuitem>
+                    <menuitem label="2.Modelo extractivo">
+                        <menu>
+                            <menuitem label="2.1 Definición del concepto" data-page="pag-concepto"></menuitem>
+                            <menuitem label="2.2 Extractivismo en América Latina" data-page="pag-america"></menuitem>                      
+                        </menu>
+                    </menuitem>    
+                    <menuitem label="Actividades" data-page="pag-actividades"></menuitem>
+                    <menuitem label="Bibliografía" data-page="pag-bibliografia"></menuitem>
+                    <menuitem label="Créditos" data-page="pag-creditos"></menuitem>
+                </menu>
+            </nav>
+            <div id="headerbanner">
+                <img src="img/banner.png" alt="Banner" title="Cooperativismo: Una economía para el Bienvivir" />
+            </div>
+            <h2 class="page-title"></h2>
+        </header>   
+            <section id="pag-inicio">
+                <div class="subpage_0">
+                    <h3>1. Colonización</h3>
+                    <p>
+                        Comencemos definiendo la colonización como un fenómeno cultural y político que se presentó en el mundo entero
+                        y delimitemos los alcances de este hecho de acuerdo con la realidad latinoamericana.
+                    </p>
+                    <p>
+                        Para explicar los momentos históricos de la colonización, nos basaremos en la propuesta de M. Mahoney,
+                        quien subraya que al estudiar los efectos del periodo colonial en el desarrollo de las sociedades, más que 
+                        la identidad del colonizador, lo que importa son sus instituciones político-económicas,
+                        y en particular si eran predominantemente mercantilistas o liberales.
+                    </p>
+                    <p>
+                        Este enfoque nos hace ver con lupa el grado de institucionalización económica, social y política, el grado 
+                        de división del trabajo, si existía o no una organización jerárquica o instituciones religiosas antes de la Conquista
+                        y de qué manera fueron sometidas estas poblaciones a nuevos modelos impuestos por los recién llegados. Es decir, si
+                        quienes llegaban a conquistar e invadir territorios americanos tenían posturas mercantilistas, la participación del 
+                        poder imperial en la Colonia iba a ser mayor en sociedades indígenas organizadas jerárquicamente, y si su postura era
+                        de corte liberal, el poder sería menor, ya que su enfoque colonizador estaba más ligado a la economía que a la aniquilación total de la cultura.
+                    </p>
+                    <div class="box-text connection">
+                        <p>
+                            En el caso de la colonización de España en Latinoamérica se distinguen dos periodos. Con ellos se puede
+                            entender claramente cuáles territorios fueron invadidos por la colonización imperial mercantilista
+                            (periodo Habsburgo) y cuáles por la colonización liberal (periodo Borbón): 
+                        </p>
+                    </div>        
+                </div>
+                <div class="subpage_1">
+                    <div class="after-before1"> 
+                        <div class="after-before one">
+                            <div class="img_after-before1">
+                                <img src="content/img1-1.png" />
+                                <img src="content/img1-2.png" />
+                            </div>
+                        </div> 
+                    </div>                  
+                    <div class="box-text important"  label="En conclusión:">
+                        <p>
+                            El periodo conocido como Colonización no fue solamente un proceso mediante el cual heredamos un tipo específico de instituciones políticas,
+                            también ocurrieron hechos que han sido considerados históricamente como genocidas y deplorables. Se impusieron también acciones de
+                            supremacía y se nombró a los primeros habitantes de estos territorios como miembros de organizaciones inferiores, que no merecían ser
+                            llamadas civilizaciones, ya que los colonizadores dieron a entender que solo existía una civilización: la suya propia.
+                        </p>
+                    </div>
+                </div>
+                <div class="subpage_2">
+                    <div class="box-text connection">
+                        <p>
+                            A continuación, veamos un fragmento de uno de los escritores más importantes de nuestra historia poscolonial: Aimé Césaire, 
+                            poeta antillano, nacido en Basse Pointe, Martinica. Fue el creador, junto con el africano Leopold Sédar Senghor, del movimiento
+                            de reivindicación de la raza negra llamado “negritud”: 
+                        </p>
+                    </div>    
+                    <div class="row cesaire">
+                        <div class="col-2">
+                            <p>
+                                ¿Qué es en principio la colonización? Ponerse primero de acuerdo en lo que no es: ni evangelización, 
+                                ni empresa filantrópica, ni voluntad de hacer retroceder las fronteras de la ignorancia, de
+                                la enfermedad, o de la tiranía, ni propagación de Dios, ni difusión del Derecho; admitir,
+                                de una vez y por todas, sin tratar de evadir las consecuencias, que aquí la última palabra la dicen 
+                                el aventurero y el pirata, el gran almacenista y el armador, el buscador de oro y el comerciante, el apetito 
+                                y la fuerza, seguidos de la sombra amenazadora y maléfica de una forma de civilización que en un momento de su historia
+                                se descubre íntimamente obligada a extender al plano mundial la competencia de sus economías antagónicas (Césaire, 1979).
+                            </p>
+                        </div>       
+                        <div class="col-2 Aime">
+                            <div class="box_media">
+                                <img src="content/img2.png" alt="img-Aimé Césaire"/>
+                                <div class="about">
+                                    <strong>Foto 1:</strong>
+                                    Aimé Césaire. Recuperado de
+                                    <a href="http://www.afribuku.com/aime-cesaire-el-negro-fundamental/" target="_blank">http://www.afribuku.com/[...]</a>  el 13 de enero de 2019.  
+                                </div>
+                            </div>                          
+                        </div>
+                    </div>        
+                    <p>
+                        Estas ideas que presenta Césaire son duras críticas al modelo colonizador/civilizador europeo, al cual acusa de negar la diversidad 
+                        cultural y de imponer brutalmente otras formas de ver el mundo. Estos hechos ocasionaron una carga ideológica de aparente 
+                        superioridad en nuestros modelos culturales y políticos, llevando a la destrucción de diversas culturas casi en su totalidad y,
+                        además, la imposición de religiones sobre sus sistemas de creencias, su relación con la naturaleza, su entorno y la manera
+                        de rendir tributo a dioses que reemplazaron por reyes con coronas de oro. Aquí puedes encontrar su texto completo, el cual
+                        te recomendamos leer como un documento histórico que reseña la justa rabia y dolor de poblaciones invalidadas políticamente desde la Conquista:
+                    </p>
+                    <div class="box-text link" label="Lectura complementaria">
+                        <p>
+                            <strong>Documento</strong>: Discurso sobre el Colonialismo (fragmento) Duración: 32 páginas                                               
+                        </p>
+                        <p>
+                            <strong>Enlace Web</strong>: <a href="http://ru.ffyl.unam.mx/bitstream/handle/10391/2998/54_CCLat_1979_Cesaire.pdf?sequence=1&isAllowed=y" target="_blank">
+                            http://ru.ffyl.unam.mx/bitstream/[...]</a>
+                        </p>
+                        <p>
+                            <strong>Enunciado</strong>: Realiza una lectura del documento para complementar tu estudio sobre el fenómeno de la Colonización en América Latina y el Caribe.
+                        </p>
+                    </div>
+                    <p>
+                        Además, te dejamos un artículo con apuntes para la reflexión desde el pensamiento decolonial en el que se evalúa de manera crítica lo que significa la
+                        colonización para América Latina:
+                    </p> 
+                    
+                    <div class="box-text link" label="Extendiendo el saber">
+                        <p>
+                            <strong>Artículo</strong>: Colonialismo occidental: ¿civilización o barbarie? Apuntes para la reflexión desde el pensamiento decolonial de Aimé Césaire y Frantz Fanon.                                              
+                        </p>
+                        <p>
+                            <strong>Enlace Web</strong>: <a href="https://www.redalyc.org/pdf/737/73737091007.pdf " target="_blank">
+                            https://www.redalyc.org/[...]</a>
+                        </p>
+                        <p>
+                            <strong>Enunciado</strong>: Realiza una lectura del artículo y responde preguntas como <strong>¿cuáles son los hechos políticos que 
+                            construyen nuestra identidad?, ¿cuál es la responsabilidad política que debemos asumir para transformar nuestra historia? </strong> 
+                        </p>
+                    </div>
+                </div>    
+                <div class="subpage_3">
+                    <div class="box_media">
+                        <img src="content/M4_U1_img3.png" class="notmobile" title="Identifica tus saberes previos">
+                        <img src="content/M4_U1_img3_mobile.png" class="onlymobile" title="Identifica tus saberes previos">
+                    </div>
+                </div> 
+                    <div class="box-text link" label="Amplía tu conocimiento">
+                        <p>
+                            <strong>Libro</strong>: La venas abiertas de América Latina. Galeano, Eduardo (1971). Ediciones La Cueva. Introducción: páginas 15 a la 23.       </p>
+                        <p>
+                            <strong>Duración</strong>: 8 páginas, 15 minutos de lectura
+                    </p>
+                    <p>
+                            <strong>Enlace web</strong>: <a href="https://static.telesurtv.net/filesOnRFS/news/2015/04/13/las_venas_abiertas_de_amxrica_latina.pdf" target="_blank">Las venas abiertas de amxrica latina</a>
+                    </p>
+                    </div>
+                    <div class="box-text connection">
+                        <p>
+                            Ahora, vamos un poco más allá del modelo político e institucional que heredamos de la Colonización en América Latina y exploremos la manera en la que ese modelo ha desembocado en
+                            lo que ahora conocemos como prácticas económicas de carácter extractivista. 
+                        </p>
+                    </div>
+            </section>
+
+            <section id="pag-concepto">
+                <div class="subpage_0">  
+                    <h3>2 Modelo extractivo</h3>
+                    <h4>2.1 Definición del concepto</h4>
+                     <p>
+                        Por  <strong>extractivismo</strong> se entienden aquellas actividades económicas que se basan en la
+                        explotación de bienes comunes naturales, que, sin ningún procesamiento o con alguno
+                        poco significativo, son comercializados en el mercado mundial. Más claramente, el
+                        extractivismo es utilizado para referirse a un tipo específico de extracción de
+                        bienes naturales para la exportación caracterizada por su gran volumen o alta
+                        intensidad (Gudynas, 2013). Complementariamente, se considera que el extractivismo 
+                        remite a las actividades que utilizan o explotan bienes que son considerados no
+                        renovables, por ejemplo, el petróleo, el gas o los minerales. A lo largo del siglo XX,
+                        la prevalencia de una lógica depredadora ha hecho que ciertas actividades pesqueras y
+                        madereras fueran consideradas también bajo el mismo rótulo (Seoane, 2013).
+                     </p>
+                     <div class="box-text connection">
+                        <p>
+                            A continuación, veamos cuatro momentos en relación a las tendencias del extractivismo.
+                        </p>
+                    </div> 
+                    <div class="img-informative" id="overlay" title="Cuatro momentos del extractivismo">
+                            <img class="one button wf-content-controler general" data-content="#ventana_textos_flotante1" src="content/img4-1.png" alt="asamblea"/>
+                            <img class="two button wf-content-controler general" data-content="#ventana_textos_flotante2" src="content/img4-2.png" alt="consejo de administracion"/>
+                            <img class="three button wf-content-controler general" data-content="#ventana_textos_flotante3" src="content/img4-3.png" alt="organo de vigilancia"/>
+                            <img class="four button wf-content-controler general" data-content="#ventana_textos_flotante4" src="content/img4-4.png" alt="gerencia"/>                
+
+                        <div id="ventana_textos_flotante1" class="wf-content autox autoy" style="display: none;">
+                            <p>
+                                La forma de acumulación capitalista caracterizada por la apropiación privada y violenta de los bienes naturales, lo que algunos autores han llamado la acumulación por desposesión.
+                            </p>
+                            <div class="close button">X</div>
+                        </div>
+                        <div id="ventana_textos_flotante2" class="wf-content autox autoy" style="display: none;">                            
+                            <p>
+                                El nuevo orden internacional forjado por la globalización, el neoliberalismo y la imposición de una nueva división internacional del trabajo, consiguió que América Latina
+                                atravesara por procesos de recolonización de sus economías de enclave.
+                            </p>
+                            <div class="close button">X</div>
+                        </div>
+                        <div id="ventana_textos_flotante3" class="wf-content autox autoy" style="display: none;">
+                            <p>
+                                 Una revolución científica basada en las biotecnologías que despliega un proceso de mercantilización
+                                (control y explotación) de la naturaleza y la vida a escala global.
+                            </p>
+                            <div class="close button">X</div>    
+                        </div>
+                        <div id="ventana_textos_flotante4" class="wf-content autox autoy" style="display: none;">
+                            <p>
+                                 Un crisis generalizada que se expresa en tres dimensiones: la energética –basada en los hidrocarburos–,
+                                la alimentaria –relacionada con la financiarización de la producción agrícola– y
+                                la climática –caracterizada por el desorden estacionario y sus consecuencias sobre los ecosistemas–.
+                            </p>
+                            <div class="close button">X</div> 
+                        </div>
+                    </div>     
+                    <p>
+                        Ante la implementación de este modelo económico en territorios en los que habitan comunidades que dependen ambientalmente
+                        de su entorno, han venido sucediendo numerosas manifestaciones contra el despojo y la invasión territorial por la extracción
+                        de materia prima natural. Una de las manifestaciones internacionales más relevantes en relación con el extractivismo sucedió
+                        en Río de Janeiro, en el año 1992. Allí se originó la  <strong>Declaración de Río sobre el Medio Ambiente
+                        y el Desarrollo,</strong> en la que se acordaron algunos parámetros para respetar la autonomía de los territorios
+                        ante posibles invasiones extractivistas. Leamos un fragmento: 
+                    </p>
+                    <cite>
+                            “El mejor modo de tratar las cuestiones ambientales es con la participación de todos los ciudadanos
+                            interesados, en el nivel que corresponda. En el plano nacional, toda persona deberá tener acceso adecuado
+                            a la información sobre el medio ambiente de que dispongan las autoridades públicas, incluida la información
+                            sobre los materiales y las actividades que encierran peligro en sus comunidades, así como la oportunidad
+                            de participar en los procesos de adopción de decisiones. Los Estados deberán facilitar y fomentar la sensibilización
+                            y la participación de la población poniendo la información a disposición de todos. Deberá proporcionarse acceso efectivo
+                            a los procedimientos judiciales y administrativos, entre éstos el resarcimiento de daños y los recursos pertinentes”.
+                    </cite>
+                    <div class="box-text connection">
+                        <p>
+                            Veamos ahora cómo ha sido el modelo extractivista en nuestro contexto latinoamericano y cuáles son
+                            los momentos políticos que tienen relación con ello.
+                        </p>
+                    </div>   
+                </div>           
+                   
+            </section>
+
+            <section id="pag-america" >
+                <div class="subpage_0">
+                    <h4>2.2 Extractivismo en América Latina</h4> 
+                    <h5>2.2.1 Momentos políticos:</h5>
+                    <p>
+                        A continuación veremos los momentos políticos de los últimos 70 años que tienen relación directa
+                        con la tensión que genera el modelo extractivista con otras alternativas de desarrollo.
+                    </p> 
+                    <div class="linea-tiempo">
+                        <div id="timeline" class="mouse-over-one">
+                            <div class="cont">
+                                <div data-ref="#line1" class="event">
+                                    <span class="date">Actualmente</span>
+                                    <div class="point"></div>
+                                </div>
+                                    <div id="line1" class="contenido" >                                                             
+                                        <i class="ion-arrow-right-c"></i>
+                                        <img src="content/img5_actual.png" class="event_pic">
+                                        <div class="title">
+                                            <h2>Actualmente</h2>
+                                            <p>
+                                                Gobiernos de derecha
+                                                Deslegitimación de las luchas progresistas
+                                            </p>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="cont">
+                                <div data-ref="#line2" class="event">                                
+                                       <span class="date">Los 2000</span>                                     
+                                    <div class="point"></div>
+                                </div>
+                                <div id="line2" class="contenido"  style="display: none;">
+                                    <i class="ion-arrow-right-c"></i>
+                                    <img src="content/img5_2000.png" class="event_pic">
+                                    <div class="title">
+                                        <h2>Los 2000</h2>
+                                        <p>
+                                            Cuestionamiento a políticas neoliberales
+                                            Gobiernos progresistas
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cont">
+                                <div data-ref="#line3" class="event">
+                                    <span class="date">
+                                        Los 80/90
+                                    </span>
+                                    <div class="point"></div>
+                                </div>
+                                <div id="line3" class="contenido"  style="display: none;">
+                                    <i class="ion-arrow-right-c"></i>
+                                    <img src="content/img5_80.png" class="event_pic">
+                                    <div class="title">
+                                        <h2>Los 80/90</h2>
+                                        <p>
+                                            Consolidación del neoliberalismo Deuda externa
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cont">
+                                <div data-ref="#line4" class="event"  style="display: none;">
+                                    <span class="date">
+                                        Los 60/70
+                                    </span>
+                                    <div class="point"></div>
+                                </div>
+                                <div id="line4" class="contenido"  style="display: none;">
+                                    <i class="ion-arrow-right-c"></i>
+                                    <img src="content/img5_60.png" class="event_pic">
+                                    <div class="title">
+                                        <h2>Los 60/70</h2>
+                                        <p>
+                                            Movimientos de izquierda Dictaduras militares Bases del modelo neoliberal
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cont">
+                                <div  class="event">
+                                    <label data-ref="#line5">
+                                        <span class="point"></span>
+                                        <span class="date">Los 50</span> 
+                                    </label>                                  
+                                </div>
+                                <div id="line5" class="contenido" style="display: none;">
+                                    <i class="ion-arrow-right-c"></i>
+                                    <img src="content/img5_50.png" class="event_pic">
+                                    <div class="title">
+                                        <h2>Los 50</h2>
+                                        <p>
+                                            Generación de industria Gobiernos populistas
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="box-text important" label="Reflexiona:">
+                        <p>
+                            ¿De qué forma crees que cada uno de estos momentos se relaciona con la prevalencia del modelo extractivista en el sur
+                            de nuestro continente? ¿Puedes establecer relaciones con la herencia cultural, social y política que nos dejó la Colonización?
+                        </p>
+                    </div>
+                </div>  
+                <div class="subpage_1"> 
+                    <h5>2.2.2 Impactos del extractivismo en América Latina</h5>   
+                    <p>
+                        Revisemos ahora, de forma concreta, cómo se evidencia el extractivismo en América Latina. Recordemos que este es un modelo
+                        basado en la explotación de los recursos naturales y la exportación a los mercados globales. 
+                    </p>  
+                    <p>
+                        A continuación podremos leer los principales rasgos de este modelo en nuestro continente, gracias a una investigación del
+                        Fondo de Acción Urgente para América Latina y el Caribe. Verás que cada uno de estos rasgos se relaciona con los cuatro
+                        momentos que estudiamos anteriormente.
+                    </p>
+                    <div class="ctrl-pagination" data-layer-height="180px"  data-orientation="vertical">
+                        <li>
+                            Las explotaciones por lo general son llevadas a cabo por empresas privadas transnacionales y en ocasiones por
+                            empresas público-privadas. Los emprendimientos se realizan para satisfacer demandas de mercados globales y no
+                            las necesidades de comunidades locales; casi la totalidad de las ganancias quedan en manos de las empresas
+                            (Fundación Rosa Luxemburgo, et. al, 2014).                        
+                        </li>
+                        <li>
+                            Demanda un alto abastecimiento energético e hídrico, e implica la construcción de obras de infraestructura,
+                            especialmente cuando se trata de yacimientos nuevos, en zonas de difícil acceso (Acosta, et. al, 2013).                         
+                        </li>
+                        <li>
+                            Produce daños ambientales irreversibles, contaminando el aire, los suelos, las fuentes hídricas y provocando grandes pérdidas de biodiversidad. 
+                        </li>
+                        <li>
+                            Viola los derechos humanos de las comunidades afectadas, destruye sus formas de vida y economías tradicionales,
+                            convirtiéndolas en dependientes de mercados externos. 
+                        </li>
+                        <li>
+                            Presenta las oportunidades laborales como uno de los mayores beneficios de los proyectos, sin embargo,
+                            la mano de obra que estos demandan es reducida, temporal, precaria y casi exclusivamente masculina. 
+                        </li>
+                        <li>
+                            Genera la reprimarización de las economías latinoamericanas, en la que los países atraen la inversión extranjera para
+                            la extracción y producción de materias primas, debilitando otros sectores de sus economías. 
+                        </li>
+                        <li>
+                            Conduce a una alta vulnerabilidad fiscal debido a la volatilidad de los precios de los recursos en el mercado
+                            internacional y además agudiza la deuda externa (Acosta, et. al, 2013).
+                        </li>
+                    </div> 
+                    <div class="about">                        
+                        Información recuperada de:
+                        <a href="https://cpalsocial.org/documentos/355.pdf" target="_blank">https://cpalsocial.org/[...]</a>Página 12.  
+                    </div>
+                    <p>
+                        También es importante identificar cuáles son las principales industrias extractivas en América Latina:
+                        <ul class="data_list">
+                            <li>
+                                Producción agrícola (monocultivos de soja, caña de azúcar, palma de aceite, maíz).
+                            </li>
+                            <li>
+                                Ganadería (principalmente, ganado bovino).
+                            </li>
+                            <li>
+                                Minería y megaminería a cielo abierto.
+                            </li>
+                            <li>
+                                Carbón. Gas natural.
+                            </li>
+                            <li>
+                                Explotación petrolera e hidrocarburos.
+                            </li>
+                            <li>
+                                Hidroenergía.
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        Al ser un modelo que se apropia de la naturaleza como recurso y que está al servicio de la acumulación
+                        de riqueza –característica del capitalismo–, las actividades propias del extractivismo traen con ellas
+                        conflictos de tipo social y ambiental que impactan negativamente los territorios y las comunidades.
+                        Entre ellas, podemos identificar:
+
+                        <ul class="data_list">
+                            <li>
+                                Destrucción ecológica.
+                            </li>
+                            <li>
+                                Concentración y acaparamiento de enormes extensiones de tierras. 
+                            </li>
+                            <li>
+                                Contaminación del aire.
+                            </li>
+                            <li>
+                                Contaminación y extinción de fuentes de agua.
+                            </li>
+                            <li>
+                                Deterioro de suelos.
+                            </li>
+                            <li>
+                                Pérdida de biodiversidad y agrobiodiversidad por deforestación e introducción de transgénicos.
+                            </li>
+                            <li>
+                                Cambio climático.
+                            </li>
+                            <li>
+                                Transformaciones abruptas en las formas de vida de las comunidades, e incluso, desplazamiento.
+                            </li>
+                            <li>
+                                Criminalización de la protesta social y asesinatos de líderes defensores de los derechos ambientales.
+                            </li>
+                        </ul>
+                    </p>
+                    <cite>
+                        “Los cuestionamientos a la expansión del agronegocio y el proceso de extensión de la frontera agraria, el nuevo
+                        latifundio y la destrucción de la agricultura campesina que motivó la aparición de nuevos movimientos campesinos –los sin
+                        tierra– entre los que se destaca el Movimiento de Trabajadores Rurales Sin Tierra (MST, 1985) en Brasil
+                        así como la fundación de la Coordinadora Latinoamericana de Organizaciones del Campo (CLOC) en 1994.
+                        Y también, las luchas y movimientos surgidos contra la megaminería a cielo abierto, que entre otras experiencias
+                        dio nacimiento en el Perú a la Confederación Nacional de Comunidades Afectadas por la Minería (CONACAMI) en 1999,
+                        expresión de un movimiento indígena campesino que confluyó a su vez en la fundación de la Coordinadora Andina de Organizaciones
+                        Indígenas (CAOI) en 2006. Por otra parte, los conflictos por los bienes comunes se convirtieron en puntos de articulación
+                        sociopolítica nacional (rural-urbana) de los cuestionamientos al régimen neoliberal como se graficó en la experiencia boliviana
+                        con el ciclo que va de la llamada “Guerra del Agua” de Cochabamba (2000) a la “Guerra del Gas” (2003) y a la agenda de octubre
+                        y la nacionalización de los hidrocarburos que orientó el proceso de luchas y cambios en el primer mandato de Evo Morales (2006-2010)”.
+                        <p class="coursedetails">
+                            <strong>(Seoane: 21, 2013).</strong>
+                        </p> 
+                    </cite>
+                    <div class="box-text important" label="Recordemos una importante reflexión de José Seoane al respecto del modelo extractivista para América Latina:">
+                        <p id="remember">
+                            En todos estos terrenos, y ciertamente en otros más, la disputa sociopolítica por el uso de los bienes
+                            comunes de la naturaleza se transformó en un punto clave de las resistencias en el continente y las
+                            alternativas enarboladas frente al capitalismo neoliberal. Y es por ello también que estas cuestiones
+                            resultan uno de los principales núcleos políticos a elucidar por el pensamiento crítico y sus proyectos
+                            emancipatorios.
+                        </p>
+                    </div>
+                    <div class="box-text link" label="Complementa tu estudio:">
+                        <p>
+                            <strong>Enunciado</strong>: A continuación encontrarás bibliografía con la que podrás complementar
+                            tus conocimientos y profundizar con respecto a las prácticas extractivistas en América
+                            Latina. También hemos elegido algunos textos especiales de investigaciones recientes para Colombia y
+                            su situación actual frente a los recursos naturales, el extractivismo y el postacuerdo. 
+                        </p>
+                        <p>                            
+                            <strong>Libro</strong>: Extractivismo, despojo y crisis climática. Desafíos para los movimientos sociales y los proyectos emancipatorios de Nuestra
+                            América. José Seoane, Emilio Taddei y Clara Algranati. Introducción: <strong>páginas 15 a la 18.</strong>
+                            <br/>
+                            <strong>Duración: 3 páginas</strong>, 10 minutos de lectura
+                            <br/>
+                            <strong>Enlace web: <a href="http://www.iheal.univ-paris3.fr/sites/www.iheal.univ-paris3.fr/files/SEOANE-TADDEI-ALGRANATI%202013.pdf" target="_blank">
+                                http://www.iheal.univ-paris3.fr/[...]</a></strong>                           
+                        </p>
+                        <p>
+                            <strong>Libro</strong>: Conflictos mineros en América Latina: extracción, saqueo y agresión Estado de situación en 2017 . 
+                            <strong>Capítulo Colombia: 35 - 45.</strong>
+                            <br/>
+                            <strong>Duración 10 páginas</strong>, 25 minutos de lectura
+                            <br/>
+                            <strong>Enlace web: <a href="https://www.ocmal.org/wp-content/uploads/2018/04/Informe_2017-2.pdf" target="_blank">https://www.ocmal.org/wpcontent/[...]</a></strong> 
+                        </p> 
+                        <p>
+                            <strong>Libro</strong>: Ecología política del extractivismo en América Latina: casos de resistencia
+                            y justicia socio ambiental. Eduardo Mondaca... [et.al.] <strong> Capítulo: Extractivismo en Colombia: el caso de
+                            Marmato Caldas en clave de Ecología Política Juliana Sabogal Aguilar</strong> páginas 171 19 0
+                            <br/>
+                            <strong>Duración 20 páginas</strong>, 1 hora de lectura
+                            <br/>
+                            <strong>Enlace web: PDF <a href="http://biblioteca.clacso.edu.ar/clacso/posgrados/20131218030905/EcologiaPolitica.pdf" target="_blank">
+                                http://biblioteca.clacso.edu.ar[...]</a></strong>
+                        </p>             
+                    </div>
+                    <div class="box-text important" label="Concluyamos…">
+                        <p>
+                            Cerramos esta primera unidad con preguntas que queremos que se queden para ser resueltas en nuestra vida cotidiana: 
+                            ¿cómo hacemos posible un mundo en el que el debate de las ideas y perspectivas políticas diversas sean realmente incluidas? ¿Qué tipo de
+                            instituciones tenemos y cómo podemos transformarlas, teniendo en cuenta que ellas tienen un arraigo histórico de siglos atrás? ¿Qué tipo 
+                            de actitudes colonizadoras tenemos en nuestra vida cotidiana con otros? ¿El cooperativismo puede ayudarnos a construir un nuevo panorama político,
+                            más allá de la competitividad, la explotación y la imposición? 
+                        </p>
+                      </div>
+                      <div class="box-text connection">
+                        <p>
+                            Ahora, te invitamos a realizar la siguiente actividad que te ayudará a recopilar conceptos
+                            importantes de esta unidad y repasar para finalizar el estudio. Estas actividad son para tu
+                            autoaprendizaje, por eso puede s realizarlas cuantas veces quieras hasta identificar las respuestas
+                            correctas. Si no logras resolver el ejercicio, es muy probable que debas repasar los contenidos o
+                            incluso consultar otras fuentes, así que ¡muchos éxitos!
+                        </p>
+                      </div>                             
+                </div>            
+            </section>
+
+            <section id="pag-actividades" ptitle="Actividades de aprendizaje de la unidad ">                
+                <div class="subpage_0">
+                    <div class="box-text activity" label="¿Quién está en lo correcto?">
+                        <p>
+                            Selecciona la idea que responde a las principales características que enuncia la compañera
+                        </p>
+                    </div>
+                    
+                    <div id="act1" class="jpit-activities-selection Seleccionar_1" data-act-id="Selecciona la idea que responde" data-parent-mark-selector="false" data-mode="single">                            
+                        <div  class="fondo-act_1"> 
+                            <div id="img1" class="grp" data-group="1"> 
+                            </div>
+                            <div id="img2" class="grp" data-group="1" data-correct="true">                             
+                            </div>                             
+                        </div>    
+                        <div class="box_end"></div>    
+                    </div> 
+                    <hr class="clear"/>                        
+                </div>
+                 
+                <div class="subpage_1">
+                    <div class="box-text activity" label="Selecciona la característica correcta">
+                        <p>
+                            Identifica cuál es la opción que corresponde con el planteamiento presentado.
+                        </p>                        
+                    </div>
+                    <div id="act2" class="jpit-activities-selection Seleccionar_2" data-act-id="Selecciona la característica correcta" data-mode="single">
+                        <div class="act_2">
+                            <img src="content/act2.png" alt="hablemos del extractivismo"/>
+                            <div class="act2_grps">
+                                <ol type="a">
+                                    <li>
+                                        <div class="grp" data-group="1" data-correct="true">
+                                            <div class="txt4">
+                                                La explotación de bienes comunes naturales que, sin ningún 
+                                                procesamiento o con alguno poco significativo, son comercializados en el mercado mundial.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="grp" data-group="1">
+                                            <div class="txt4">Generar paz territorial.</div>
+                                        </div>
+                                    </li> 
+                                    <li>
+                                        <div class="grp" data-group="1">
+                                                <div class="txt4">Vincular los desarrollos locales de las poblaciones para generar más autonomía territorial.</div>                                    
+                                            </div>
+                                        </li>  
+                                        <li>  
+                                            <div class="grp" data-group="1">
+                                                <div class="txt4">La distribución equitativa de la riqueza.</div>
+                                            </div>                                      
+                                        </li>                                                                       
+                                    </ol>                                                            
+                                </div>                                  
+                            </div>
+                        <div class="box_end">
+                        </div> 
+                    </div>
+                <hr class="clear"/>                
+                </div>
+                <div class="subpage_2"> 
+                    <div class="box-text activity" label="Selecciona los aciertos">
+                        <p>
+                            Marca Sí/No para responder correctamente a cada afirmación.
+                        </p>                        
+                    </div>
+                    <div class="fondo-act_3">
+                        <div class="jpit-activities-check" data-act-id="Marca Sí/No">
+                            <words>
+                                <li data-val="true">Acumulación capitalista caracterizada por la apropiación privada y violenta de los bienes naturales.</li>
+                                <li data-val="true">Globalización neoliberal.</li>
+                                <li>Justicia ambiental.</li>
+                                <li data-val="true">Recolonización de las economías y las biotecnologías.</li>
+                                <li>Regulación de los conflictos ambientales.</li>
+                                <li>Transparencia y garantía de una información oportuna sobre los proyectos extractivos.</li>
+                                <li data-val="true">Disputas por el control de las reservas y los nuevos minerales.</li>
+                                <li data-val="true">Expansión del agronegocio y la transformación radical del clima.</li>
+                            </words>
+                            <div class="board">
+                                <div class="check_left">
+                                    <div class="play">
+                                        <p>Además, los procesos históricos que ha generado el extractivismo latinoamericano incluyen factores como…</p>
+                                        <div class="word_content"> </div>
+                                        <div class="buttons">
+                                            <button class="yes general">Si</button>
+                                            <button class="not general">No</button>
+                                        </div>
+                                    </div>
+                                    <div class="box_conclution">
+                                        <h3>¡Ha finalizado!</h3>
+                                        <p>Al clasificar ha tenido los siguientes aciertos y desaciertos:</p>
+                                        <p>
+                                            <strong>Aciertos:</strong>
+                                            <span class="correct_words"></span>
+                                        </p>
+                                        <p>
+                                            <strong>Desaciertos:</strong>
+                                            <span class="wrong_words"></span>
+                                        </p>
+                                        <div class="buttons">
+                                            <button class="general reload">Vovler a clasificar las ciudades incorrectamente clasificadas</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="check_right">
+                                    <div class="box_result">
+                                        <div class="correct">
+                                            <div class="hits">0</div>
+                                            <div class="text">Aciertos</div>
+                                        </div>
+                                        <div class="wrong">
+                                            <div class="miss">0</div>
+                                            <div class="text">Desaciertos</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="clear"/>                   
+                </div>
+            </section>
+            
+            <section id="pag-bibliografia"  ptitle="Bibliografía">
+                <div class="subpage_0">
+                    <ul class="data_list">
+                        <li>
+                            Arévalo, J. (2011) Colonialismo, instituciones y desarrollo. En Colonialismo, 
+                            instituciones y desarrollo: el peso de la historia en el desarrollo de largo plazo. 
+                            Reseña de "colonialism and post-colonial development. Spanish America in comparative perspective"
+                            de James Mahoney. Revista de Economía Institucional, vol. 13, núm. 25, (pp.395-404).
+                            Bogotá: Universidad Externado de Colombia. Recuperado de:  
+                            <a href="https://www.redalyc.org/articulo.oa?id=41921464020" target="_blank">
+                                https://www.redalyc.org/[...]</a> el 29 de enero de 2019
+                        </li>
+                        <li>
+                            Carrillo, C. (s.f.) Los Habsburgo y los Borbones. Recuperado de
+                            <a href="https://www.academia.edu/7267070/LOS_HABSBURGO_and_BORBONES" target="_blank">
+                                https://www.academia.edu/[...]</a> el 13 de enero de 2019.
+                        </li>
+                        <li>
+                            Carvajal, L. M. (2016). Extractivismo en América Latina. Impacto en la vida de las mujeres y propuestas de defensa
+                            del territorio. Bogotá: FAU - AL Fondo Acción Urgente - América Latina. Recuperado de:
+                            <a href="https://cpalsocial.org/documentos/355.pdf" target="_blank">
+                                https://cpalsocial.org/documentos/[...]</a> 8 de abril de 2019
+                        </li>
+                        <li>
+                            Fajardo, L. (2002) La corrupción heredada: Pasado colonial, sistema legal y desarrollo económico 
+                            en Colombia Revista de Estudios Sociales, núm. 12, junio, 2002 (pp.22-30). Bogotá: Universidad de 
+                            Los Andes. Recuperado de: 
+                            <a href="https://www.redalyc.org/articulo.oa?id=81501203" target="_blank">
+                                https://www.redalyc.org/articulo.oa?id=81501203</a> el 29 de enero de 2019
+                        </li>
+                        <li>
+                            Seoane, J et al. (2013) Extractivismo, despojo y crisis climática. Desafíos para los movimientos sociales
+                            y los proyectos emancipatorios de Nuestra América. Buenos Aires: Ediciones Herramienta, Editorial 
+                            El Colectivo y GEAL. Recuperado de: 
+                            <a href="http://www.iheal.univ-paris3.fr/sites/www.iheal.univ-paris3.fr/files/SEOANE-TADDEI-ALGRANATI%202013.pdf" target="_blank">
+                                http://www.iheal.univ-paris3.fr/[...]</a>
+                        </li>
+                        <li>
+                            Méndez J. (2014) Colonialismo occidental: ¿civilización o barbarie? Apuntes para la reflexión desde el pensamiento decolonial 
+                            de Aimé Césaire y Frantz Fanon Omnia. Vol. 20, núm. 3, septiembre-diciembre, 2014 (pp.92-105). Maracaibo: Universidad del Zulia.
+                            Recuperado de:  
+                            <a href="https://www.redalyc.org/pdf/737/73737091007.pdf" target="_blank">
+                                https://www.redalyc.org/pdf/[...]</a> el 29 de enero de 2019
+                        </li>
+                        <li>
+                            Galeano, E. (1971). Las venas abiertas de América Latina. México: Ediciones La Cueva. Recuperado de:
+                            <a href="https://static.telesurtv.net/filesOnRFS/news/2015/04/13/las_venas_abiertas_de_amxrica_latina.pdf" target="_blank">
+                                https://static.telesurtv.net/[...]</a>  el 29 de enero de 2019
+                        </li>
+                        <li>
+                            González Casanova, P. (2003). El colonialismo interno (una redefinición). México: Universidad Nacional Autónoma de México. Recuperado de: 
+                            <a href="http://conceptos.sociales.unam.mx/conceptos_final/412trabajo.pdf" target="_blank">
+                                http://conceptos.sociales.unam.mx/[...]</a>
+                        </li>
+                        <li>
+                            Fondo Acción Urgente. Extravismo en América Latina. Impacto en la vida de las mujeres y propuestas de defensa del territorio. Bogotá:
+                            FAU – AL. Recuperado de 
+                            <a href="https://cpalsocial.org/documentos/355.pdf" target="_blank">
+                                http://conceptos.sociales.unam.mx/[...]</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="pag-creditos" ptitle="Créditos">
+                <div class="subpage_0" id="credits_subpage">
+                    <div>
+                        <h3>INVESTIGACIÓN Y DESARROLLO DE CONTENIDOS</h3>
+                        <h4>Plataforma Solidaria Confiar</h4>
+                        <cite>Alejandro López Carmona</cite>
+                        <p><strong>Director Fundación Confiar</strong></p>
+                        <cite>Jenny Giraldo García</cite>
+                        <p><strong>Directora de Formación Confiar</strong></p>
+                        <cite>Cristina Amariles Mejía</cite>
+                        <p><strong>José García</strong></p>
+                        <cite>Director Escuela Confiar</cite>
+                        <p><strong>Asociada Confiar</strong></p>
+                        <cite>Oriana C. Zapata Ochoa</cite>
+                        <p><strong>Gestora Educativa</strong></p>
+                    </div>
+                    <div>
+                        <h3>ASESORÍA PEDAGÓGICA Y DISEÑO INSTRUCCIONAL</h3>
+                        <cite>Carolina Llanos Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>CORRECCIÓN DE ESTILOS</h3>
+                        <cite>Felipe Sosa Vargas</cite>
+                    </div>
+                    <div>
+                        <h3>DISEÑO GRÁFICO</h3>
+                        <cite>Juliana Tobón</cite>
+                    </div>
+                    <div>
+                        <h3>INTEGRACIÓN DE CONTENIDOS</h3>
+                        <cite></cite>
+                    </div>
+                    <div>
+                        <h3>REVISIÓN DE CALIDAD</h3>
+                        <cite></cite>
+                    </div>
+                    <div>
+                        <h3>GESTIÓN TÉCNICA Y ADMINISTRATIVA</h3>
+                        <cite>David Herney Bernal García</cite>
+                    </div>  
+                    <div>
+                        <h3>Producción</h3>
+                        <p class="logos">
+                            <a href="https://escuela.confiar.coop/" target="_blank">
+                                <img src="img/logo_escuela.png" alt="logo y enlace escuela confiar"/>
+                            </a>
+                            <a href="https://bambuco.co/" target="_blank">
+                                <img src="img/logo_bambuco_confiar.png" alt="logo y enlace de bambuco"/>
+                            </a>
+                        </p>
+                        <div class="editions">
+                            <p>1ª edición: abril de 2019</p>
+                        </div>
+                    </div>
+                    <div>
+                        <strong>
+                            Un producto educativo y sin ánimo de lucro de la Escuela Confiar
+                        </strong>
+                        <p>
+                            <a href="https://www.confiar.coop/" target="_blank">www.confiar.coop</a>
+                        </p>
+                        <p>
+                            <a href="https://escuela.confiar.coop/" target="_blank">escuela.confiar.coop</a>
+                        </p>
+                    </div>
+                </div>     
+            </section>
+        </main>
+
+        <footer class="not_print">
+            <div class="measuring-progress" data-type="horizontal"></div>
+
+            <div id="subpages_menu">
+                <div class="button" previous-page></div>
+                <ul class="button" subpages-menu></ul>
+                <div class="button" next-page></div>
+            </div>
+
+            <div id="page_number"></div>
+        </footer>
+
+    </div>
+
+    <div id="results_page" style="display:none;">
+        <h2>Resumen de su avance en la lectura del documento</h2>
+        <h3>Páginas visitadas</h3>
+        <p>En verde, aquellas páginas que ya ha visitado.</p>
+        <div id="results_page_visited" class="container"></div>
+        <br class="clear" />
+        <h3>Actividades de aprendizaje</h3>
+        <div id="results_page_activities"></div>
+    </div>
+
+    <div id="printent_content" style="display:none;">
+        <div class="content"></div>
+        <div class="button_container">
+            <button class="general button" onclick="window.print();">Imprimir</button>
+            <button id="printent_back" class="general button" >Volver</button>
+        </div>
+    </div>
+
+</body>
+</html>

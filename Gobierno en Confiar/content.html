@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Unidad 2:</title>
+    <link href="https://fonts.googleapis.com/css?family=Kalam:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="etxt/css" href="source.css"/>
+    <link href="components/jquery/css/custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="components/ionicons/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_quiz.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_mark.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_wordpuzzle.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_crossword.css" rel="stylesheet" type="text/css">
+    <link href="components/pit/css/jpit_zoom.css" rel="stylesheet" type="text/css">
+    <link href="components/csscircle/circle.min.css" rel="stylesheet" type="text/css">
+
+    <script src="components/jquery/jquery.min.js"></script>
+    <script src="components/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="components/jquery-mobile/jquery.ui.touch-punch.min.js"></script>
+
+    <!--jQuery components -->
+    <script src="components/twentytwenty/js/jquery.event.move.js" type="text/javascript"></script>
+    <script src="components/twentytwenty/js/jquery.twentytwenty.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/twentytwenty/css/twentytwenty.css" type="text/css" media="screen" />
+
+    <script src="components/mediaelementjs/mediaelement-and-player.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="components/mediaelementjs/mediaelementplayer.css" type="text/css" />
+
+    <script src="components/maphilight/jquery.maphilight.min.js" type="text/javascript"></script>
+  
+    <!--End jQuery components -->
+    <script src="components/pit/jpit_api.js"></script>
+    <script src="components/pit/utilities/jpit_utilities.js"></script>
+    <script src="components/pit/activity/jpit_activity.js"></script>
+    <script src="components/pit/resources/jpit_resource.js"></script>
+    <script src="components/pit/activity/quiz/jpit_activity_quiz.js"></script>
+    <script src="components/pit/activity/mark/jpit_activity_mark.js"></script>
+    <script src="components/pit/activity/wordpuzzle/jpit_activity_wordpuzzle.js"></script>
+    <script src="components/pit/activity/droppable/jpit_activity_droppable.js"></script>
+    <script src="components/pit/activity/crossword/jpit_activity_crossword.js"></script>
+    <script src="components/pit/activity/cloze/jpit_activity_cloze.js"></script>
+    <script src="components/pit/activity/form/jpit_activity_form.js"></script>
+    <script src="components/pit/activity/sortable/jpit_activity_sortable.js"></script>
+    <script src="components/pit/activity/check/jpit_activity_check.js"></script>
+    <script src="components/pit/resources/movi/jpit_resource_movi.js"></script>
+    <script src="components/pit/resources/zoom/jpit_resource_zoom.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/lang.es.js"></script>
+    <script src="js/lib.js"></script>
+    <script src="js/mobilelib.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="components/scorm/SCORM_12_APIWrapper.js"> </script>
+    <script src="components/scorm/scorm_api.js"> </script>
+
+    <style type='text/css'>
+
+        body {
+            background-color: rgba(242, 242, 242, 0.7);
+        }
+
+        body.loading {
+            text-align: center;
+        }
+
+        body.loading:after {
+            content: "";
+            background: url(img/loading.gif) no-repeat bottom center;
+            width: 130px;
+            height: 30px;
+            display: block;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+
+        body.loading #body {
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="loading" data-debug="true" data-display-mode="onlypages" data-approve-limit="70" data-activities-percentaje="60" data-mobile-mode="512">
+    <div id="body" class="not_print">
+        <div id="not_scorm_msg" style="display: none;"></div>
+
+        <header class="current">
+            <div id="logos">
+                <img src="img/logo_escuela.png" alt="logo escuela confiar" title="Escuela confiar"/>
+                <img src="img/logo_confiar.png" alt="logo confiar" title="Cooperativa Confiar"/>
+           </div>
+            <nav label="Principal" class="horizontal main" data-offset="true">
+                <menu>
+                    <menuitem label="Contenido" data-page="pag-contenido"></menuitem>
+                    <menuitem label="Actividad" data-page="pag-actividad"></menuitem>
+                    <menuitem label="Bibliografía" data-page="pag-bibliografia"></menuitem>
+                    <menuitem label="Créditos" data-page="pag-creditos"></menuitem>
+                </menu>
+            </nav>
+            <div class="banner">
+                <img src="img/banner.png" alt="banner"
+                 title="Cooperativismo: Una economía para el Bienvivir"/>
+            </div>
+            <h2 class="page-title"></h2>
+        </header>
+
+        <main style="display: none;">
+
+            <section id="pag-contenido" ptitle="Contenido">
+                <div class="subpage_0">
+                    <h3>Desarrollo temático</h3>
+                    <p>
+                        Frente a la corrupción en el Estado colombiano, la sociedad civil tiene unas implicaciones y,
+                        en especial, las empresas o las estructuras empresariales que logran unos niveles de poder adquisitivo
+                        con sus recursos. Para comprender mejor esta teoría, los contenidos que se desarrollan en esta unidad
+                        darán respuesta a las siguientes preguntas:
+                    </p>
+                    <div class="ctrl-pagination horizontal" data-numeric-pagination="true" data-type="a" >
+                        <li>
+                            ¿En qué condiciones está la Fuerza de Integración, 
+                            constituida por los ciudadanos, para el caso de la Cooperativa y los asociados?
+                        </li>
+                        <li>
+                            ¿En qué condiciones está la Fuerza de Dirección? Teniendo en cuenta que para el Estado corresponde 
+                            a la dirigencia buscar el logro de los objetivos, y para la Cooperativa es el equipo de dirección, 
+                            como el Consejo, la Junta de Vigilancia y las gerencias.
+                        </li>
+                        <li>
+                            ¿En qué condiciones está la Fuerza de la Estructura Funcional? Entendiendo esta como la dotación 
+                            del Estado para prestar sus servicios y, en el caso de la Cooperativa, la intermediación financiera.
+                        </li>
+                    </div>
+                    <p>
+                        Así como el Estado tiene inmersas unas condiciones fundamentales para el ejercicio de la gobernabilidad, 
+                        las organizaciones también las poseen y son disposiciones con igual o mayor exigencia de cohesión y dirección,
+                        limitando con ello su condición de funcionalidad, ya que tienen un ámbito más preciso y con objetivos más concretos. 
+                        Tomemos el caso de la Cooperativa Confiar:
+                    </p>
+                    <div id="items" class="row">
+                        <div class="col-2 col-imagen">
+                            <div class="instruction">
+                                Pasa el <em>mouse</em> por los items para obtener más información
+                            </div>                        
+                            <div class="mouse-over-one">
+                                <img class="top button current" src="content/img1-1.png" alt="fuerza de la estructura funcional" title="La Fuerza de la Estructura Funcional" data-ref="#a1"/>
+                                <img class="left button" src="content/img1-2.png" alt="fuerza de direccion" title="La Fuerza de Dirección" data-ref="#a2"/>
+                                <img class="right button" src="content/img1-3.png" alt="fuerza de integracion" title="La Fuerza de Integración" data-ref="#a3" />
+                            </div>    
+                            <div class="about">
+                                <strong>Imagen 1</strong> Condiciones fundamentales para el ejercicio de la gobernabilidad (2018)
+                            </div>                            
+                        </div>
+                        <div class="col-2 custom-border">
+                            <div id="a1">
+                                <h2>La Fuerza de la Estructura Funcional</h2>
+                                <p>
+                                    <strong>La Fuerza de la Estructura Funcional</strong> corresponde
+                                    a la dotación de la Cooperativa para prestar sus servicios
+                                </p>
+                            </div>
+                            <div id="a2" style="display: none;">
+                                <h2>La Fuerza de Dirección</h2>
+                                <p>
+                                    <strong>La Fuerza de Dirección</strong> orienta y dirige la actividad
+                                    de la Organización para el logro de los objetivos.
+                                </p>
+                            </div>
+                            <div id="a3" style="display: none;">
+                                <h2>La Fuerza de Integración</h2>
+                                <p>
+                                    <strong>La Fuerza de Integración</strong>, constituida por los asociados, aporta en la definición 
+                                    de la naturaleza Cooperativa en todos sus años de existencia.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-text link" label="¡Profundiza tu estudio aún más!">
+                        
+                        <div class="box_body">
+                            <p>
+                                <strong>Documento:</strong> <a href="https://www.confiar.coop/uploads/imagenes/Documentos%20PDF/codigo_de_buen_gobierno.pdf" target="_blank">
+                                Código de Buen Gobierno</a>
+                            </p>
+                            <p>
+                                <strong>Duración:</strong> 34 páginas
+                            </p>
+                            <p>
+                               <strong>Enunciado:</strong>Aborda la lectura y conoce más acerca del Código de Buen Gobierno Confiar,
+                               un documento fundamental que plasma el gobierno institucional.
+                            </p>
+                        </div>
+                    </div>   
+                    <p>
+                        La Cooperativa, por ser una entidad “sin ánimo de lucro 
+                        para el desarrollo integral del ser humano como sujeto, 
+                        actor y fin de la economía” (Ley 454 de 1998), busca hacer realidad 
+                        ese propósito mediante una práctica que muestre niveles de coherencia. Según tus conocimientos, 
+                        experiencias y expectativas, te invitamos a reflexionar:
+                    </p>
+                    <div class="ctrl-pagination horizontal" data-numeric-pagination="true" data-type="a">
+                        <li>
+                            ¿Cómo considera la gestión de los responsables de los procesos de la administración, el Oficial
+                            de Cumplimiento, la Junta de Vigilancia, el Comité de Auditoría, el Consejo de Administración y
+                            las entidades de vigilancia externas?
+                        </li>
+                        <li>
+                            ¿Cuáles deben ser los parámetros para medir la gestión de los responsables de los procesos de la 
+                            administración, el Oficial de Cumplimiento, la Junta de Vigilancia, el Comité de Auditoría, el 
+                            Consejo de Administración y las entidades de vigilancia externas?
+                        </li>
+                        <li>
+                            ¿Cómo generar y mantener un ambiente de credibilidad, estabilidad y gobierno corporativo de la Cooperativa?
+                        </li>
+                    </div>
+                    <div class="box-text important" label="Para concluir">
+                        <div class="title"></div>
+                        <div class="box_body">
+                            <p>
+                                Quien se asocia a una cooperativa, o a cualquiera empresa del sector solidario, tienen tres características
+                                fundamentales con relación a ella: es dueño, usuario y gestor, y en la medida en que cada uno lo asume ética,
+                                estética y políticamente, se desarrolla el carácter democrático de la entidad y eso se ve reflejado en el gobierno que esta tiene. 
+                                Esta unidad busca entonces que, como asociado o asociada de la Cooperativa Confiar, incorpores mejor estas tres características y que ello repercuta en la sociedad.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box-text connection">
+                        <div class="box_body">
+                            Ahora, te invitamos a realizar las siguientes actividades que, como saberes previos, te ayudarán a reforzar conceptos
+                            importantes en el estudio de esta unidad. Ten presente que estas son para tu autoaprendizaje, por eso puedes realizarlas 
+                            cuantas veces consideres necesario hasta identificar las respuestas correctas. Si no logras resolver el ejercicio, es muy
+                            probable que debas repasar algunos contenidos o incluso consultar otras fuentes. ¡Éxitos!
+                        </div>
+                    </div>  
+                </div>
+            </section>
+            <section id="pag-actividad" ptitle="Actividades">
+                <div class="subpage_1">
+                    <div class="box-text activity" label="1. Arrastrar y soltar">
+                        <p>
+                            Arrastra al enunciado los conceptos que completan con sentido la afirmación.
+                        </p>
+                    </div>
+                    <div id="act1" class="jpit-activities-droppable" data-verify-type="target">
+                        <div class="fondo1">
+                            <div class="cont1">
+                                <img src="content/img2_act1_photo.png" alt="imagen 2 actividad 1" title="Imagen 2 Actividad 1"/>
+                                <div>
+                                    <p class="txt2">La asamblea de delegados es</p>
+                                    <div class="linea1" data-target-group="1" ></div>
+                                    <span class="txt2"> de </span>
+                                    <div class="linea2" data-target-group="2"></div>
+                                    <p class="txt2">en nuestra Cooperativa</p>
+                                </div>
+                            </div>
+                            <div class="grupos">
+                                <div class="grupo1">
+                                    <p class="txt3">
+                                        La asamblea de delegados es
+                                    </p>
+                                    <div class="gp" data-group="3">la entidad</div>
+                                    <div class="gp" data-group="1">el órgano</div>
+                                    <div class="gp" data-group="4">la reunión</div>
+                                    <div class="gp" data-group="5">el dirigente</div>
+                                </div>
+                                <div class="grupo2">
+                                    <p class="txt3">de</p>
+                                    <div class="gp" data-group="6">mayor participación</div>
+                                    <div class="gp" data-group="7">encuentro cooperativo</div>
+                                    <div class="gp" data-group="8">representación</div>
+                                    <div class="gp" data-group="2">toma de decisiones</div>
+                                </div>
+                                <div class="box_end"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="clear"/>
+                </div>
+                <div class="subpage_2">
+                    <div class="box-text activity" label="2. Completar">
+                        <p>
+                            De la lista de desplegables selecciona los elementos
+                            que corresponden a las características de cada organismo de control.
+                        </p>                                
+                    </div>
+                    <div class="jpit-activities-cloze" data-parent-mark-selector="p">
+                        <div class="fondo2">
+                            <div  class="left">
+                                <p>
+                                    <img src="content/img3_act2_icon_personas.png" alt="imagen 3 actividad 2" title="Imagen 3 Actividad 2"/>
+                                    Integrantes:
+                                </p>
+                                <p>
+                                    <select class="slect1">                                       
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option data-response="true">3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                    </select>
+                                    <span class="text3">principales</span>
+                                </p>
+                                <p>
+                                    <select class="slect1">                                        
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option data-response="true">3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                    </select>
+                                    <span>suplentes</span>
+                                </p>
+                                <p>
+                                    <p>Es el órgano encargado de</p>
+                                    <select class="slect2">                                        
+                                        <option>Fiscalizar los recursos.</option>
+                                        <option>Vigilar el comportamiento.</option>
+                                        <option>Establecer el control político.</option>
+                                        <option>Regular el direccionamiento estratégico.</option>
+                                        <option data-response="true">Mantener el control social.</option>
+                                    </select>
+                                </p> 
+                            </div>
+                            <div class="right">
+                                <p>
+                                    <img src="content/img3_act2_icon_personas.png" alt="integrantes:" title="Imagen 3 Actividad 2"/>
+                                    Integrantes:
+                                </p>
+                                <p>
+                                    <select class="slect1">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option data-response="true">7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                    </select>
+                                    <span class="text7">principales</span>
+                                </p>
+                                <p>
+                                    <select class="slect1">                                        
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option data-response="true">7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                    </select>
+                                    <span class="text7">suplentes</span>
+                                </p>
+                                <p class="text5 correct">
+                                    <p>
+                                        Se encarga de 
+                                    </p>
+                                    <select class="slect2">                                        
+                                        <option>Fiscalizar los recursos.</option>
+                                        <option>Vigilar el comportamiento.</option>
+                                        <option>Establecer el control político.</option>
+                                        <option data-response="true">Regular el direccionamiento estratégico.</option>
+                                        <option>Mantener el control social.</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="box_end">
+                            </div> 
+                       </div>    
+                    </div>
+                    <hr class="clear"/>
+                </div>
+                <div class="subpage_3">
+                    <div class="box-text activity" label="3. Arrastrar y soltar">
+                        <p>
+                            Arrastra al tablero los tres elementos que corresponden al enunciado:
+                        </p>
+                    </div>
+                    <div class="jpit-activities-droppable"  data-act-id="act3" data-target-multi="3" 
+                        data-autoalign="false">
+                        <div class="fondo3">
+                            <div class="act3_grps" data-target-group="1"></div>
+                            <div class="grps">
+                                <div data-group="1">Dirección
+                                </div>
+                                 <div data-group="2" >Financiera
+                                </div>
+                                 <div data-group="2">Administrativa
+                                </div>
+                                 <div data-group="2">Control
+                                </div>
+                                 <div data-group="2">Social
+                                </div>
+                                 <div data-group="1">Integración
+                                </div>
+                                 <div data-group="2">Económica
+                                </div>
+                                 <div data-group="2">Ambiental
+                                </div>
+                                <div data-group="2">Planeación
+                                </div>
+                                <div data-group="1">Estructura Funcional
+                                </div>
+                                <div data-group="2">Decisión
+                                </div>
+                                <div data-group="2">Ejecución
+                                </div>
+                            </div>
+                            <div class="box_end"></div>
+                        </div>
+                    </div>
+                    <hr class="clear"/>
+                </div>
+                <div class="subpage_4">
+                    <div class="box-text activity" label="4. Seleccionar">
+                        <p>
+                            Selecciona las casillas que corresponden con las prácticas 
+                            que identifican a las organizaciones solidarias
+                       </p>
+                    </div>
+                    <div class="jpit-activities-selection" data-act-id="act4">
+                        <div class="fondo4">
+                            <div class="act4_grps">
+                                <img src="content/img5_act4_photo.png" alt="imagen 5 actividad 4" title="Imagen 5 Actividad 4">
+                                <div class="grp" data-group="1" data-correct="true">
+                                    <div class="txt4">Junta de Vigilancia.</div>
+                                </div>
+                                <div class="grp" data-group="1" data-correct="true">
+                                    <div class="txt4">Consejo de Administración.</div>
+                                </div>
+                                <div class="grp" data-group="1">
+                                    <div class="txt4">Asamblea de Delegados(as).</div>                                    
+                                </div>
+                                <div class="grp" data-group="1" data-correct="true">
+                                    <div class="txt4">Tribunal Electoral.</div>
+                                </div>
+                                <div class="grp" data-group="1">
+                                    <div class="txt4">Asociados(as) dirigentes.</div>
+                                </div>
+                                <div class="grp" data-group="1">
+                                    <div class="txt4">Revisor Fiscal.</div>
+                                </div>
+                            </div>                                  
+                        </div>
+                        <div class="box_end">
+                        </div> 
+                    </div>
+                </div>  
+            </section>    
+            <section id="pag-bibliografia"  ptitle="Bibliografía">
+                <div class="subpage_0">
+                    <ul class="data_list">
+                        <li>
+                            Alberdi, J. (2006). Diccionario de Acción Humanitaria y Cooperación
+                            al Desarrollo definición de buen gobierno. Recuperado en noviembre de 2018 de:
+                            <a href="http://www.dicc.hegoa.ehu.es/listar/mostrar/24" target="_blank">
+                                http://www.dicc.hegoa.ehu.es/[...]
+                            </a>
+                        </li>
+                        <li>
+                            Colombia, Secretaria Senado. Congreso de la Republica, Ley 79 de 1988. Bogotá,
+                            Diario Oficial No. 38.648, de 23 de diciembre de 1988. Disponible en:
+                            <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=9211" target="_blank">
+                                https://www.funcionpublica.gov.co/[...]</a>
+                        </li>
+                        <li>
+                            Colombia, Secretaria Senado. Ley 454 de 1998. Bogotá, Diario Oficial No. 43.357, 
+                            de 6 de agosto de 1998. Disponible en: <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=3433" target="_blank">
+                                http://www.funcionpublica.gov.co/[...]</a> Congreso de la Republica, Ley 454 de 1998
+                        </li>
+                        <li>
+                            Cooperativa Confiar. Acuerdo 102 del Consejo de Administración. Medellín. 2006
+                        </li>
+                        <li>
+                            Cooperativa Confiar. Código de Buen Gobierno. Medellín. Disponible en: <a href="https://www.confiar.coop/uploads/imagenes/Documentos%20PDF/codigo_de_buen_gobierno.pdf" target="_blank">
+                                https://www.confiar.coop/uploads/[...]</a>
+                        </li>
+                        <li>
+                            Cooperativa Confiar. Estatutos. Medellín. 2017
+                        </li>
+                        <li>
+                            Cortina, Adela. 2007. «Lo justo y lo bueno», en Carlos Gómez y Javier Muguerza (eds.), 
+                            La aventura de la moralidad. Madrid: Alianza Editorial.
+                        </li>
+                        <li>
+                            Dávalos, P. (2003). FMI y Banco Mundial: la estrategia perfecta. Recuperado en noviembre de 2018 de:
+                            <a href="http://observatori.org/documents/FMI_BM_davalos.pdf" target="_blank">http://www.observatori.org/[...]</a>
+                        </li>
+                        <li>
+                            Dermizaky P., P. (2000). Estado de derecho y buen gobierno. Ius et Praxis, 6(2), 145- 151.
+                        </li>
+                        <li>
+                            Fukuyama, Francis. Orden y decadencia de la política. Barcelona: Deusto. 2016.
+                        </li>
+                        <li>
+                            Giner de S., S.; y Sarasa, S. (1997). Buen gobierno y política social. España: Ariel.
+                        </li>
+                        <li>
+                            Naciones Unidas –Comisión Económica y Social para Asia y el Pacífico–. (2007). What is Good Governance?
+                            Recuperado en noviembre de 2018 de <a href="https://www.unescap.org/our-work/macroeconomic-policy-development" target="_blank">
+                                http://www.unescap.org/pdd/[...]</a>
+                        </li>
+                        <li>
+                            Rosales, M.; y Hernández, J. C. (2011). Buen gobierno local, mejores prácticas y gestión del conocimiento:
+                            los bancos de buenas prácticas y su influencia en la acumulación de saber sobre desarrollo municipal y local.
+                            Recuperado en noviembre de 2018 de <a href="http://www.celadel.org/textos/encuentro/Rosales,%20Mario.pdf" target="_blank">
+                                http://www.celadel.org/textos/[...]</a>
+                        </li>
+                        <li>
+                            Stoker, G. 1998. El "buen gobierno como teoría": cinco propuestas. Revista Internacional de Ciencias Sociales, 155, 3-35
+                        </li>
+                        <li>
+                            Suárez I., E. El buen gobierno. Estudios Políticos. 2001
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section id="pag-creditos" ptitle="Créditos">
+                <div class="subpage_0">
+                    <h3>INVESTIGACIÓN Y DESARROLLO DE CONTENIDOS</h3>
+                    <h4>Plataforma Solidaria Confiar</h4>
+                    <cite>Alejandro López Carmona</cite>
+                    <p><strong>Director Fundación Confiar</strong></p>
+                    <cite>Jose García</cite>
+                    <p><strong>Director Escuela Confiar</strong></p>
+                    <cite>Cristina Amariles Mejía</cite>
+                    <p><strong>Asociada Confiar</strong></p>
+                    <cite>Oriana C. Zapata Ochoa</cite>
+                    <p><strong>Gestora Educativa</strong></p>
+                </div>
+                <div>
+                    <h3>ASESORÍA PEDAGÓGICA Y DISEÑO INSTRUCCIONAL</h3>
+                    <cite>Carolina Llanos Tobón</cite>
+                </div>
+                <div>
+                    <h3>CORRECCIÓN DE ESTILOS</h3>
+                    <cite>María Catherine Ortega Cruz</cite>
+                </div>
+                <div>
+                    <h3>DISEÑO GRÁFICO</h3>
+                    <cite>Juliana Tobón</cite>
+                </div>
+                <div>
+                    <h3>INTEGRACIÓN DE CONTENIDOS</h3>
+                    <cite>Sergio Andrés Arboleda Zuluaga</cite>
+                </div>
+                <div>
+                    <h3>REVISIÓN DE CALIDAD</h3>
+                    <cite>Ana Yarenis Arango Muñoz</cite>
+                </div>
+                <div>
+                    <h3>GESTIÓN TÉCNICA Y ADMINISTRATIVA</h3>
+                    <cite>David Herney Bernal García</cite>
+                </div>
+                <div>
+                    <h3>Producción</h3>
+                    <p class="logos">
+                        <a href="https://bambuco.co/" target="_blank">
+                            <img src="img/logo_bambuco.png" alt="logo y enlace de bambuco"/>
+                        </a>
+                        <a href="https://escuela.confiar.coop/" target="_blank">
+                            <img src="img/logos_confiar_creditos.png" alt="logo y enlace escuela confiar"/>
+                        </a>
+                    </p>
+                </div>
+                <div>
+                    <strong>
+                        Un producto educativo y sin ánimo de lucro de la Escuela Confiar
+                    </strong>
+                    <p>
+                        <a href="https://www.confiar.coop/" target="_blank">www.confiar.coop</a>
+                    </p>
+                    <p>
+                        <a href="https://escuela.confiar.coop/" target="_blank">escuela.confiar.coop</a>
+                    </p>
+                </div>
+                <div class="editions">
+                    <p>1ª edición: enero de 2019</p>
+                    <p>2ª edición: febrero de 2019</p>
+                </div>
+            </section>
+        </main>
+        <footer class="not_print">
+            <div class="measuring-progress"></div>
+
+            <nav label="Características globales" class="globals">
+                <menu>
+                    <menuitem data-global-id="results"><i title="Progreso" class="ion-clipboard tooltip" data-position-at="top"></i></menuitem>
+                    <menuitem data-global-id="return">
+                        <i title="Maximizar" class="ion-arrow-expand tooltip maximize" data-position-at="top"></i>
+                        <i title="Minimizar" class="ion-arrow-shrink tooltip minimize" data-position-at="top"></i>
+                    </menuitem>
+                    <menuitem data-global-id="close_all"><i title="Regresar" class="ion-reply tooltip" data-position-at="top"></i></menuitem>
+                </menu>
+            </nav>
+
+            <div id="subpages_menu">
+                <div class="button" previous-page></div>
+                <ul class="button" subpages-menu></ul>
+                <div class="button" next-page></div>
+            </div>
+
+            <div id="page_number"></div>
+        </footer>
+    </div>
+    <div id="results_page" style="display:none;">
+        <h2>Resumen de su avance en la lectura del documento</h2>
+        <h3>Páginas visitadas</h3>
+        <p>En verde, aquellas páginas que ya ha visitado.</p>
+        <div id="results_page_visited" class="container"></div>
+        <br class="clear" />
+        <div id="results_page_activities"></div>
+    </div>
+    <div id="printent_content" style="display:none;">
+        <div class="content"></div>
+        <div class="button_container">
+            <button class="general button" onclick="window.print();">Imprimir</button>
+            <button id="printent_back" class="general button" >Volver</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+/*Esquema del contenido*/
+#subpage_0 .box1 {
+    position: relative;
+    width: 600px;
+    height: 580px;
+    margin: auto;
+}
+
+#subpage_0 .box1 a {
+    position: absolute;
+    height: 41px;
+    width: 41px;
+    border-radius: 24px;
+}
+
+#subpage_0 .box1 a:hover {
+    background-color:#B9E6F5; 
+    opacity: 0.5;
+}
+ /*Posiciones del esquema de contenido*/
+#subpage_0 .box1 .bx2 {
+    left: 46.4%;
+    top: 10%;
+}
+
+#subpage_0 .box1 .bx3 {
+    left: 73%;
+    top: 23.3%;
+}
+
+#subpage_0 .box1 .bx4 {
+    left: 80.4%;
+    top: 49%;
+}
+
+#subpage_0 .box1 .bx5 {
+    left: 71.4%;
+    top: 73.3%;
+}
+
+#subpage_0 .box1 .bx6 {
+    left: 46.3%;
+    top: 85.8%;
+}
+    
+#subpage_0 .box1 .bx7 {
+    left: 22.5%;
+    top: 74.5%;
+}
+
+#subpage_0 .box1 .bx8 {
+    left: 12.4%;
+    top: 48%;
+}
+
+#subpage_0 .box1 .bx9 {
+    left: 19.7%;
+    top: 23.7%;
+}
+
+.box-text.important .data_list {
+    color: #fff;
+}
+
+/*Posiciones de los apuntadores*/
+
+#subpage_2_2 .box_media {
+    margin: auto;
+    width: 550px;
+    height: 365px;
+    position: relative;
+}
+
+#subpage_2_2 .box_media .note_1 {
+    left: 64%;
+    top: 4%;
+}
+
+#subpage_2_2 .box_media .note_2 {
+    left: 63%;
+    top: 47%;
+}
+
+#subpage_2_2 .box_media .note_3 {
+    left: 58%;
+    top: 73%;
+}
+
+#subpage_2_3 .box_media {
+    margin: auto;
+    width: 600px;
+    height: 470px;
+    position: relative;
+}
+
+#subpage_2_3 .box_media .note_4 {
+    left: 59%;
+    top: 15%;
+}
+
+#subpage_2_3 .box_media .note_5 {
+    left: 59%;
+    top: 24%;
+}
+
+#subpage_2_3 .box_media .note_6 {
+    left: 82%;
+    top: 30%;
+}
+
+#subpage_2_3 .box_media .note_7 {
+    left: 65%;
+    top: 42%;
+}
+
+#subpage_2_3 .box_media .note_8 {
+    left: 38%;
+    top: 55%;
+}
+
+#subpage_2_3 .box_media .note_9 {
+    left: 85%;
+    top: 81%;
+}
+
+#subpage_2_4 .box_media {
+    margin: auto;
+    width: 600px;
+    height: 540px;
+    position: relative;
+} 
+
+#subpage_2_4 .box_media .note_10 {
+    left: 76%;
+    top: 11%;
+}
+
+#subpage_2_4 .box_media .note_11 {
+    left: 18%;
+    top: 21%; 
+}
+
+#subpage_2_4 .box_media .note_12 {
+    left: -2%;
+    top: 35%;
+}
+#subpage_2_4 .box_media .note_13 {
+    left: 26%;
+    top: 38%;
+}
+#subpage_2_4 .box_media .note_14 {
+    left: 34%;
+    top: 88%;
+}
+
+/*Centrando imagen de antes y despues */
+.after-before {
+    display:block;
+    margin:auto;
+}
+
+/*Modificacion de viñeta dentro del important*/
+.box-text.important .data_list li::before {
+    color: #ffffff;
+}
+
+#pag-creditos {
+    text-align: center;
+}
+
+#logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logos img {
+    margin: 0 10px;
+}
+
+.datatable {
+    background-color: #ffffff;
+    border-color: #000000;
+}
+
+#subpage_1_2 .box_media {
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+} 
+
+.box-text.important.uno {
+    margin: 26px auto;
+    text-align: justify;
+}
+
+.text_tooltip {
+ line-height: 1.8;
+}
